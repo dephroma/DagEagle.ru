@@ -603,7 +603,7 @@ body {
     left: 0;
     width: 100%;
     height: 120%; /* Больше высоты блока для эффекта движения */
-    background-image: url('images/booking-bg.jpg');
+    background-image: url('images/booking-bg.jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Ключевое свойство для параллакса */
