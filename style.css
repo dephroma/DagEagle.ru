@@ -464,6 +464,17 @@ body {
     }
 }
 
+/* Адаптация body padding под навигацию */
+body {
+    padding-top: 60px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 50px;
+    }
+}
+
 /* Стили для блока Каталог */
 .catalog-section {
     padding: 80px 0;
