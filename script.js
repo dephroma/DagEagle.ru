@@ -111,6 +111,15 @@ document.getElementById('tourBookingForm').addEventListener('submit', function(e
   });
 });
 
+
+        const navContainer = document.querySelector('.nav-container');
+document.querySelector('.scroll-left').addEventListener('click', () => {
+  navContainer.scrollBy({left: -100, behavior: 'smooth'});
+});
+document.querySelector('.scroll-right').addEventListener('click', () => {
+  navContainer.scrollBy({left: 100, behavior: 'smooth'});
+});
+
 // Маска для телефона
 document.getElementById('phone').addEventListener('input', function(e) {
   let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
@@ -136,6 +145,9 @@ document.getElementById('phone').addEventListener('input', function(e) {
                 }
             });
         });
+
+
+
 
 
         
