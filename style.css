@@ -216,13 +216,15 @@ body {
 
 /* Навигация (ещё раз для надёжности) */
 .navbar {
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный */
+    backdrop-filter: blur(5px); /* Эффект размытия для красивого стеклянного вида */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     padding: 10px 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    transition: all 0.3s ease;
 }
 
 .nav-container {
@@ -243,20 +245,16 @@ body {
     gap: 15px;
 }
 
+/* Стили для ссылок в темной навигации */
 .nav-link {
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 12px; /* Уменьшаем размер шрифта */
-    letter-spacing: 0.5px;
-    transition: color 0.3s;
-    white-space: nowrap; /* Запрещаем перенос текста */
-    padding: 5px 8px; /* Добавляем отступы */
+    color: white !important; /* Белый текст */
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #e67e22;
+    color: #e67e22 !important; /* Оранжевый при наведении */
+    opacity: 1;
 }
 
 body {
@@ -439,6 +437,20 @@ body {
         text-align: center;
         background: #f5f5f5;
         border-radius: 4px;
+    }
+
+        .navbar {
+        padding: 8px 0;
+        background-color: rgba(0, 0, 0, 0.8); /* Чуть менее прозрачный на мобильных */
+    }
+    
+    .nav-link {
+        background: rgba(255, 255, 255, 0.1); /* Слегка выделим кнопки */
+        border-radius: 4px;
+    }
+    
+    .nav-link:hover {
+        background: rgba(255, 255, 255, 0.2);
     }
 }
 
