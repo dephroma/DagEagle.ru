@@ -406,11 +406,13 @@ body {
 
 
 @media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column; /* Меняем направление на колонку */
-        align-items: stretch;
-        padding: 10px;
-    }
+.nav-container {
+  mask-image: linear-gradient(to right, 
+    transparent 0%, 
+    black 20px, 
+    black calc(100% - 20px), 
+    transparent 100%);
+}
     
     .logo-container {
         display: flex;
@@ -441,13 +443,12 @@ body {
 }
 
 @media (max-width: 480px) {
-    .nav-links {
-        grid-template-columns: 1fr; /* 1 колонка на очень маленьких экранах */
-    }
-    
-    .nav-link {
-        font-size: 10px;
-    }
+  .nav-links {
+    gap: 5px;
+  }
+  .nav-link {
+    padding: 6px 8px;
+  }
 }
 
 /* Отступ для body, чтобы контент не перекрывался навигацией */
