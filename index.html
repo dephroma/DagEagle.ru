@@ -12,19 +12,27 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo-container">
-                <img src="images/logo.png" alt="Дагестанские путешествия" class="logo">
+                <img src="images/logo.png" alt="Логотип" class="logo">
             </div>
             <div class="nav-links">
-                <a href="#" class="nav-link">О нас</a>
-                <a href="#" class="nav-link">Каталог</a>
-                <a href="#" class="nav-link">Что включено в тур</a>
-                <a href="#" class="nav-link">Контакты</a>
+                <a href="#about" class="nav-link">О нас</a>
+                <a href="#catalog" class="nav-link">Каталог</a>
+                <a href="#included" class="nav-link">Что включено</a>
+                <a href="#contacts" class="nav-link">Контакты</a>
             </div>
         </div>
     </nav>
 
+    <section id="about">...</section>
+    <section id="catalog">...</section>
+    <section id="included">...</section>
+    <section id="contacts">...</section>
+
+
+
+
     <!-- Герой-секция -->
-    <section class="hero">
+    <section class="hero"  id="main">
         <div class="container">
             <h1>Путешествия по Дагестану.</h1>
             <p class="subtitle">Тёплые семейные туры в сердце горной республики.</p>
@@ -39,8 +47,10 @@
         </div>
     </section>
 
+
+
     <!-- Блок "О нашей компании" -->
-<section class="about-company">
+<section id="about" class="about-company">
     <div class="container">
         <div class="about-header">
             <h1>О нашей компании</h1>
@@ -83,7 +93,7 @@
 
 
     <!-- Блок Каталог -->
-    <section class="catalog-section">
+    <section id="catalog" class="catalog-section">
         <div class="container">
         <h2 class="section-title">Каталог</h2>
         
@@ -202,7 +212,7 @@
 </section>
 
 <!-- Раздел "Что включено в тур?" -->
-<section class="about-company">
+<section id="about" class="about-company">
     <div class="container">
         <h2 class="section-title">О нашей компании</h2>
         <div class="features-grid">
@@ -280,59 +290,205 @@
 
 
 <!-- Блок с отзывами -->
-<section class="reviews-section">
+<section class="reviews-section">s
   <div class="container">
     <h2 class="section-title">Отзывы наших клиентов</h2>
     <p class="section-subtitle">Больше отзывов в нашем <a href="#" class="social-link">сообществе ВК</a></p>
 
-    <div class="reviews-grid">
-      <!-- Отзыв 1 -->
-      <div class="review-card">
-        <div class="review-content">
-          <div class="review-text">
-            <p class="highlight">Реальность превзошла все ожидания!</p>
-            <p>Спасибо большое Туры по Дагестану за такую насыщенную программу! Невероятные горы, гостеприимные жители, Сулакский каньон - отдельная любовь!</p>
-            <p>Нас взяли уютный, комфортабельный транспорт, музыка и песни Дагестана сопровождали всю дорогу! Гид супер, знает всю историю от и до!</p>
-          </div>
-          <div class="review-author">
-            <div class="author-name">Надежда</div>
-            <div class="author-tour">"Край мечты"</div>
+    <div class="reviews-carousel">
+      <div class="reviews-track">
+        
+        <!-- Отзыв 1 -->
+        <div class="review-card">
+          <div class="review-content">
+            <div class="author-avatar">
+              <img src="images/1review.jpg" alt="Надежда">
+            </div>
+            <div class="review-text">
+              <p class="highlight">Реальность превзошла все ожидания!</p>
+              <p>Нас взяли уютный, комфортабельный транспорт, музыка и песни Дагестана сопровождали всю дорогу! Гид супер, знает всю историю Дагестана от и до! Впечатлений после поездки море!</p>
+            </div>
+            <div class="review-author">
+              <div class="author-name">Надежда</div>
+              <div class="author-tour">"Край мечты"</div>
+            </div>
           </div>
         </div>
+
+        <!-- Отзыв 2 -->
+        <div class="review-card">
+          <div class="review-content">
+            <div class="author-avatar">
+              <img src="images/2review.jpg" alt="Татьяна">
+            </div>
+            <div class="review-text">
+              <p class="highlight">Старый Дагестан - это волшебство!</p>
+              <p>Если вам хотелось увидеть старый Дагестан, посетите Гамсутль. Опытные гиды расскажут вам историю этого поселения, покажут самые интересные локации для фото. Проезжая десятки километров по горному серпантину, видя зелёные террасы, вы обязательно влюбитесь в этот край!</p>
+            </div>
+            <div class="review-author">
+              <div class="author-name">Татьяна</div>
+              <div class="author-tour">"Древний Дербент"</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Отзыв 3 -->
+        <div class="review-card">
+          <div class="review-content">
+            <div class="author-avatar">
+              <img src="images/3review.jpg" alt="Денис">
+            </div>
+            <div class="review-text">
+              <p class="highlight">Все было супер!</p>
+              <p>Еда, локации, гостевые дома – всё было супер. Не думали, что нас так сможет что-то впечатлить в родной России. Надеюсь, это была наша не последняя встреча, хочется возвращаться к вам вновь и вновь.</p>
+            </div>
+            <div class="review-author">
+              <div class="author-name">Денис</div>
+              <div class="author-tour">"Весь Дагестан"</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Новый отзыв 4 -->
+        <div class="review-card">
+          <div class="review-content">
+            <div class="author-avatar">
+              <img src="images/4review.jpg" alt="Ольга">
+            </div>
+            <div class="review-text">
+              <p class="highlight">Незабываемый вояж!</p>
+              <p>Спасибо Туру Дагестанский орёл за прекрасно проведённое время. Брали семидневный тур «Дагестанский вояж». Гид устроил нам незабываемый отдых. Всё было на высшем уровне. Локации нереальной красоты. Кормили очень вкусно, в восторге от местной кухни.</p>
+            </div>
+            <div class="review-author">
+              <div class="author-name">Ольга</div>
+              <div class="author-tour">"Дагестанский вояж"</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Новый отзыв 5 -->
+        <div class="review-card">
+        <div class="review-content">
+            <div class="author-avatar">
+            <img src="images/5review.jpg" alt="Олеся">
+            </div>
+            <div class="review-text">
+            <p class="highlight">Мечта сбылась!</p>
+            <p>Я очень мечтала поехать в Дагестан и вот моя мечта сбылась! И я не пожалела , а каждый тур он уникален по своему . Приезжайте в Дагестан , это нужно увидеть своими глазами и вдохнуть этот запах гор и трав ...</p>
+            </div>
+            <div class="review-author">
+                <div class="author-name">Олеся</div>
+                <div class="author-tour">Авторский тур</div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="carousel-controls">
+  <button class="carousel-prev">←</button>
+  <button class="carousel-next">→</button>
+</div>
+</div>
+</section>
+
+
+<!-- Блок с формой заявки -->
+<section class="booking-form">
+  <div class="container">
+    <h2 class="section-title">Оставьте заявку</h2>
+    <p class="section-subtitle">Заполните поля и мы свяжемся с вами для оформления и оплаты</p>
+
+<form id="tourBookingForm" class="booking-form__content" method="POST" action="https://formspree.io/f/rromann192@gmail.com">
+      <div class="form-group">
+        <label for="name">Ваше имя</label>
+        <input type="text" id="name" name="name" placeholder="Укажите имя" required>
       </div>
 
-      <!-- Отзыв 2 -->
-      <div class="review-card">
-        <div class="review-content">
-          <div class="review-text">
-            <p class="highlight">Все было супер!</p>
-            <p>Спасибо менеджерам за организацию такого крутого отдыха. Каждый из 5 дней был супер интересным и насыщенным.</p>
-            <p>Еда, локации, гостевые дома - всё было супер. Не думали, что нас так сможет что-то впечатлить в родной России.</p>
-          </div>
-          <div class="review-author">
-            <div class="author-name">Денис</div>
-            <div class="author-tour">"Весь Дагестан"</div>
-          </div>
-        </div>
+      <div class="form-group">
+        <label for="guests">Количество гостей</label>
+        <input type="number" id="guests" name="guests" placeholder="Сколько гостей поедет с вами?" min="1" required>
       </div>
 
-      <!-- Отзыв 3 -->
-      <div class="review-card">
-        <div class="review-content">
-          <div class="review-text">
-            <p class="highlight">Незабываемый отдых!</p>
-            <p>Если вам хотелось увидеть старый Дагестан, посетите Гамсутль. Опытные гиды расскажут вам историю этого поселения, покажут самые интересные локации для фото.</p>
-          </div>
-          <div class="review-author">
-            <div class="author-name">Татьяна</div>
-            <div class="author-tour">"Древний Дербент"</div>
-          </div>
-        </div>
+      <div class="form-group">
+        <label for="date">Дата тура</label>
+        <input type="date" id="date" name="date" placeholder="Укажите желаемую дату" required>
       </div>
+
+      <div class="form-group">
+        <label for="tour">Выбранный тур</label>
+        <input type="text" id="tour" name="tour" placeholder="Введите название из каталога" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Телефон</label>
+        <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Ваш email для связи">
+      </div>
+
+      <button type="submit" class="submit-btn">Отправить заявку</button>
+    </form>
+  </div>
+</section>
+
+
+<!-- Блок контактов -->
+<section id="contacts-section" class="contacts-section">
+  <div class="container">
+    <div class="contacts-content">  <!-- Добавляем обертку для контента -->
+      <h2 class="section-title">Свяжитесь с нами</h2>
+      <p class="section-subtitle">Выберите удобный способ связи</p>
+    
+    <div class="contact-buttons">
+      <!-- Кнопка ВКонтакте -->
+        <a href="https://vk.com/ваша_группа" class="contact-btn vk-btn" target="_blank">
+
+        <svg class="contact-icon" viewBox="0 0 24 24">
+            <path d="M19.915 13.028c-.388-.49-.277-.708 0-1.146.005-.005 3.208-4.431 3.538-5.932l.002-.001c.164-.547 0-.949-.793-.949h-2.624c-.668 0-.976.345-1.141.731 0 0-1.336 3.198-3.226 5.271-.61.599-.892.791-1.225.791-.164 0-.419-.192-.419-.739V5.949c0-.656-.215-.949-.734-.949H9.169c-.419 0-.668.306-.668.591 0 .622.945.765 1.043 2.515v3.797c0 .832-.151.985-.486.985-.892 0-3.057-3.211-4.34-6.886-.259-.713-.512-1.001-1.185-1.001H1.317c-.749 0-.9.345-.9.731 0 .682.892 4.073 4.148 8.553 2.17 3.058 5.226 4.715 8.006 4.715 1.671 0 1.875-.368 1.875-1.001 0-2.922-.151-3.198.686-3.198.388 0 1.056.192 2.616 1.667C18.378 17.894 18.805 18 19.381 18c.748 0 1.127-.368.909-1.094-.499-1.527-3.871-4.668-4.023-4.878z"/>
+        </svg>
+        Написать в ВК
+        </a>
+      
+      <!-- Кнопка Телеграм -->
+      <a href="https://t.me/ваш_телеграм" class="contact-btn tg-btn" target="_blank">
+        <svg class="contact-icon" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.6 7.6c-.15.72-.54.9-1.1.56l-3-2.2-1.45 1.4c-.16.16-.3.3-.6.3l.2-3 5.6-5.1c.24-.22.1-.34-.37-.12l-6.9 4.3-3-1c-.7-.22-.72-.7.15-1.05l11.6-4.5c.58-.2 1.1.15.9 1.05z"/>
+        </svg>
+        Написать в Telegram
+      </a>
+      
+      <!-- Кнопка звонка -->
+      <a href="tel:+79991234567" class="contact-btn phone-btn">
+        <svg class="contact-icon" viewBox="0 0 24 24">
+          <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+        </svg>
+        Позвонить нам
+      </a>
     </div>
   </div>
 </section>
 
+    <script>
+        // Добавляем этот скрипт для гарантированной работы
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100, // 100px - отступ сверху
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 
 
 <!-- ... ваш существующий код каталога ... -->
