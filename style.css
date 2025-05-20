@@ -5,7 +5,15 @@
     box-sizing: border-box;
 }
 
+.header {
+    background-color: black;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    width: 100%;
+}
+
 body {
+        background-color: rgb(255, 255, 255);
     font-family: 'Montserrat', sans-serif;
     color: #333;
     line-height: 1.6;
@@ -26,9 +34,9 @@ body {
     height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center; /* Центрирование по горизонтали */
     color: white;
     text-align: center;
-    padding: 60px 0;
 }
 
 .hero h1 {
@@ -404,68 +412,47 @@ body {
 
 
 @media (max-width: 768px) {
-.nav-container {
-  mask-image: linear-gradient(to right, 
-    transparent 0%, 
-    black 20px, 
-    black calc(100% - 20px), 
-    transparent 100%);
-}
-    
-    .logo-container {
+    .nav-links {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end; /* Прижимаем к правому краю */
         align-items: center;
         width: 100%;
-        margin-bottom: 10px;
-    }
-    
-    .logo {
-        height: 35px;
-    }
-    
-    .nav-links {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2 колонки */
-        gap: 8px;
-        width: 100%;
-    }
-    
-    .nav-link {
-        font-size: 11px;
-        padding: 6px 5px;
-        text-align: center;
-        background: #f5f5f5;
-        border-radius: 4px;
+        gap: 15px; /* Отступ между ссылками */
+        padding-left: 20px; /* Отступ слева для логотипа/других элементов */
+        overflow-x: auto; /* Горизонтальная прокрутка, если не помещается */
+        -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
     }
 
-        .navbar {
-        padding: 8px 0;
-        background-color: rgba(0, 0, 0, 0.8); /* Чуть менее прозрачный на мобильных */
-    }
-    
     .nav-link {
-        background: rgba(255, 255, 255, 0.1); /* Слегка выделим кнопки */
-        border-radius: 4px;
+        font-size: 14px;
+        padding: 8px 0; /* Убираем боковые отступы, чтобы экономить место */
+        color: white !important;
+        white-space: nowrap; /* Запрещаем перенос текста */
+        flex-shrink: 0; /* Запрещаем сжимание */
     }
-    
-    .nav-link:hover {
-        background: rgba(255, 255, 255, 0.2);
-    }
-}
 
-@media (max-width: 480px) {
-  .nav-links {
-    gap: 5px;
-  }
-  .nav-link {
-    padding: 6px 8px;
-  }
+    /* Убираем фон и лишние эффекты */
+    .nav-link {
+        background: transparent !important;
+        border-radius: 0 !important;
+    }
+
+    /* Для очень узких экранов */
+    @media (max-width: 480px) {
+        .nav-links {
+            gap: 10px;
+            padding-left: 10px;
+        }
+        .nav-link {
+            font-size: 12px;
+        }
+    }
 }
 
 /* Отступ для body, чтобы контент не перекрывался навигацией */
 body {
-    padding-top: 70px;
+    padding-top: 0 !important; /* Полное удаление отступа */
+    margin: 0;
 }
 
 @media (max-width: 768px) {
@@ -483,41 +470,6 @@ body {
     
     .catalog-image img {
         min-height: 200px;
-    }
-
-
-    
-    /* Добавляем бургер-меню */
-    .burger-menu {
-        display: block;
-        width: 30px;
-        height: 20px;
-        position: relative;
-        cursor: pointer;
-    }
-    
-    .burger-menu span {
-        display: block;
-        position: absolute;
-        height: 2px;
-        width: 100%;
-        background: #333;
-        opacity: 1;
-        left: 0;
-        transform: rotate(0deg);
-        transition: .25s ease-in-out;
-    }
-    
-    .burger-menu span:nth-child(1) {
-        top: 0px;
-    }
-    
-    .burger-menu span:nth-child(2), .burger-menu span:nth-child(3) {
-        top: 10px;
-    }
-    
-    .burger-menu span:nth-child(4) {
-        top: 20px;
     }
 }
 
@@ -574,9 +526,6 @@ body {
 }
 
 /* Адаптация body padding под навигацию */
-body {
-    padding-top: 60px;
-}
 
 @media (max-width: 768px) {
     body {
