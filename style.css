@@ -407,9 +407,7 @@ body {
         min-height: 200px;
     }
 
-     .nav-links {
-        display: none; /* Скрываем обычное меню */
-    }
+
     
     /* Добавляем бургер-меню */
     .burger-menu {
