@@ -23,18 +23,24 @@ body {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/background.jpeg');
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Выравнивание по верху */
+    justify-content: center;
     color: white;
     text-align: center;
-    padding: 60px 0;
+    padding: 20px;
+    word-break: break-word;
+    hyphens: auto;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .hero h1 {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
     line-height: 1.2;
@@ -45,7 +51,8 @@ body {
 
 .hero .subtitle {
     font-size: 1.1rem;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    padding: 0 10px;
     font-weight: 300;
     width: 100%;
 }
@@ -240,7 +247,7 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 15px;
+    gap: 30px;
 }
 
 .nav-link {
@@ -248,11 +255,9 @@ body {
     color: #333;
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 12px; /* Уменьшаем размер шрифта */
-    letter-spacing: 0.5px;
+    font-size: 14px;
+    letter-spacing: 1px;
     transition: color 0.3s;
-    white-space: nowrap; /* Запрещаем перенос текста */
-    padding: 5px 8px; /* Добавляем отступы */
 }
 
 .nav-link:hover {
@@ -402,63 +407,6 @@ body {
 
 .book-btn:hover {
     background-color: #c0392b;
-}
-
-
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column; /* Меняем направление на колонку */
-        align-items: stretch;
-        padding: 10px;
-    }
-    
-    .logo-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    
-    .logo {
-        height: 35px;
-    }
-    
-    .nav-links {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2 колонки */
-        gap: 8px;
-        width: 100%;
-    }
-    
-    .nav-link {
-        font-size: 11px;
-        padding: 6px 5px;
-        text-align: center;
-        background: #f5f5f5;
-        border-radius: 4px;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-links {
-        grid-template-columns: 1fr; /* 1 колонка на очень маленьких экранах */
-    }
-    
-    .nav-link {
-        font-size: 10px;
-    }
-}
-
-/* Отступ для body, чтобы контент не перекрывался навигацией */
-body {
-    padding-top: 70px;
-}
-
-@media (max-width: 768px) {
-    body {
-        padding-top: 100px; /* Увеличиваем отступ для мобильных */
-    }
 }
 
 /* Адаптивность */
