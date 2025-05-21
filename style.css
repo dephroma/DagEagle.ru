@@ -80,10 +80,16 @@ body {
     line-height: 1.8;
 }
 
+
+
+
 /* Кнопки */
+
+
 .cta-button, .book-button {
-    background: #e67e22;
-    color: white;
+    position: relative;
+    background: transparent;
+    color: transparent;
     border: none;
     padding: 12px 25px;
     font-size: 1rem;
@@ -91,18 +97,75 @@ body {
     text-transform: uppercase;
     border-radius: 4px;
     letter-spacing: 1px;
-    white-space: nowrap;
-    margin-top: auto; /* Кнопка прижимается к низу контейнера */
-    margin-bottom: 20px; /* Отступ снизу */
+    margin-top: auto;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    z-index: 1;
+    
+    /* Градиент текста как в навигации */
+    background: linear-gradient(135deg, #F5DEB3 0%, #FFD700 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.cta-button:hover, .book-button:hover {
-    background: #d35400;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+/* Стекло-подложка */
+.cta-button::before, .book-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Полупрозрачный черный */
+    backdrop-filter: blur(8px); /* Эффект размытия */
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 4px;
+    z-index: -1;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Тонкая светлая рамка */
+    transition: all 0.4s ease;
 }
+
+/* Градиентная рамка */
+.cta-button::after, .book-button::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #F5DEB3 0%, #FFD700 100%);
+    border-radius: 5px;
+    z-index: -2;
+    opacity: 0.7;
+    transition: all 0.4s ease;
+}
+
+/* Эффекты при наведении */
+.cta-button:hover, .book-button:hover {
+    background: linear-gradient(135deg, #F5DEB3 0%, #E67E22 50%, #FFA500 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    transform: translateY(-3px);
+    text-shadow: 0 0 10px rgba(230, 126, 34, 0.3);
+}
+
+.cta-button:hover::after, .book-button:hover::after {
+    background: linear-gradient(135deg, #F5DEB3 0%, #E67E22 50%, #FFA500 100%);
+    opacity: 0.9;
+}
+
+.cta-button:hover::before, .book-button:hover::before {
+    background: rgba(0, 0, 0, 0.7); /* Чуть темнее при наведении */
+}
+
+
+
+
 
 /* Секция с туром */
+
 .tour-section {
     padding: 80px 0;
     background: #f9f9f9;
