@@ -460,7 +460,7 @@ body {
         -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
     }
     .nav-link {
-        font-size: 30px;
+        font-size: 22px;
         padding: 8px 12px;
         background: linear-gradient(135deg, #F5DEB3 0%, #FFD700 100%);
         -webkit-background-clip: text;
@@ -474,7 +474,7 @@ body {
             padding-left: 10px;
         }
         .nav-link {
-            font-size: 18px;
+            font-size: 12px;
         }
     }
 }
