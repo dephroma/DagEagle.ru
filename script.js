@@ -155,6 +155,12 @@ document.getElementById('phone').addEventListener('input', function(e) {
     }
 });
 
+window.addEventListener('scroll', function() {
+    const parallax = document.querySelector('.parallax-image');
+    const scrollPosition = window.pageYOffset;
+    parallax.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+});
+
 
 
 

@@ -850,6 +850,7 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Ключевое свойство для параллакса */
+        object-fit: cover;
     z-index: 1;
 }
 
