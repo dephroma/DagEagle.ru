@@ -92,8 +92,8 @@ body {
 /* Кнопки */
 
 
-.cta-button, .book-button {
-      margin-top: 30000px; /* Добавляем отступ сверху */
+.cta-button {
+      margin-top: 300px; /* Добавляем отступ сверху */
     margin-bottom: 20px;
   position: relative;
   background: transparent;
@@ -120,7 +120,7 @@ body {
 }
 
 /* Стекло-подложка */
-.cta-button::before, .book-button::before {
+.cta-button::before {
     content: '';
     position: absolute;
     top: 0;
@@ -137,7 +137,7 @@ body {
 }
 
 /* Градиентная рамка */
-.cta-button::after, .book-button::after {
+.cta-button::after {
     content: '';
     position: absolute;
     top: -2px;
@@ -152,7 +152,7 @@ body {
 }
 
 /* Эффекты при наведении */
-.cta-button:hover, .book-button:hover {
+.cta-button:hover {
     background: linear-gradient(135deg, #F5DEB3 0%, #E67E22 50%, #FFA500 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -160,12 +160,12 @@ body {
     text-shadow: 0 0 10px rgba(230, 126, 34, 0.3);
 }
 
-.cta-button:hover::after, .book-button:hover::after {
+.cta-button:hover::after {
     background: linear-gradient(135deg, #F5DEB3 0%, #E67E22 50%, #FFA500 100%);
     opacity: 0.9;
 }
 
-.cta-button:hover::before, .book-button:hover::before {
+.cta-button:hover::before {
     background: rgba(0, 0, 0, 0.7); /* Чуть темнее при наведении */
 }
 
