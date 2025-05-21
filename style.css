@@ -21,11 +21,17 @@ body {
 
 @font-face {
     font-family: 'Podarok'; /* Название шрифта */
-    src: 
-         url('../fonts/Podarok.ttf') format('truetype');
+    src: url('../fonts/Podarok.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap; /* Оптимизация загрузки */
+}
+
+@font-face {
+  font-family: 'Equilibrist';
+  src: url('..fonts/Equilibrist.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 .container {
@@ -49,7 +55,7 @@ body {
 }
 
 .hero h1 {
-    font-family: 'Playfair Display', serif;
+  font-family: 'Equilibrist', serif;
     font-size: 3rem;
     margin-bottom: 20px;
     text-transform: uppercase;
