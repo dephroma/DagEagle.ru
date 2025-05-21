@@ -245,7 +245,13 @@ body {
 }
 
 .logo {
-    height: 50px;
+        height: 60px;
+        width: auto;
+    display: block; /* Важно для корректного выравнивания */
+    margin-bottom: 0 !important; /* Убираем нижний отступ */
+    padding-bottom: 0 !important;
+    vertical-align: bottom; /* Выравниваем по нижнему краю */
+    line-height: 1; /* Убираем лишнее пространство для текстовых лого */
 }
 
 .nav-links {
@@ -253,16 +259,29 @@ body {
     gap: 15px;
 }
 
-/* Стили для ссылок в темной навигации */
+/* Основные стили навигации */
 .nav-link {
-    color: white !important; /* Белый текст */
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
+    font-family: 'Podarok', sans-serif; /* Подключаем шрифт */
+    text-decoration: none !important; /* Убираем подчеркивание */
+    position: relative;
+    transition: all 0.4s ease;
 }
 
+/* Градиентный цвет текста */
+.nav-link {
+    background: linear-gradient(135deg, #F5DEB3 0%, #FFD700 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+
+/* Эффект при наведении */
 .nav-link:hover {
-    color: #e67e22 !important; /* Оранжевый при наведении */
-    opacity: 1;
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    transform: translateY(-2px);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 body {
@@ -422,19 +441,12 @@ body {
         overflow-x: auto; /* Горизонтальная прокрутка, если не помещается */
         -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
     }
-
     .nav-link {
-        font-size: 14px;
-        padding: 8px 0; /* Убираем боковые отступы, чтобы экономить место */
-        color: white !important;
-        white-space: nowrap; /* Запрещаем перенос текста */
-        flex-shrink: 0; /* Запрещаем сжимание */
-    }
-
-    /* Убираем фон и лишние эффекты */
-    .nav-link {
-        background: transparent !important;
-        border-radius: 0 !important;
+        font-size: 16px;
+        padding: 8px 12px;
+        background: linear-gradient(135deg, #F5DEB3 0%, #FFD700 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
     }
 
     /* Для очень узких экранов */
