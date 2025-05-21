@@ -242,21 +242,25 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
+        position: relative;
+    z-index: 100;
 }
 
 .logo {
-        height: 60px;
-        width: auto;
-    display: block; /* Важно для корректного выравнивания */
-    margin-bottom: 0 !important; /* Убираем нижний отступ */
-    padding-bottom: 0 !important;
-    vertical-align: bottom; /* Выравниваем по нижнему краю */
-    line-height: 1; /* Убираем лишнее пространство для текстовых лого */
+    height: 60px;
+    width: auto;
+    z-index: 110; /* Логотип поверх навигации */
+    margin-right: 30px;
+    flex-shrink: 0; /* Запрещаем сжатие */
 }
 
 .nav-links {
     display: flex;
-    gap: 15px;
+    flex-grow: 1;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 100;
+    padding-left: 20px; /* Отступ от лого */
 }
 
 /* Основные стили навигации */
