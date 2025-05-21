@@ -835,7 +835,7 @@ body {
 
 .parallax-booking {
     position: relative;
-    height: 45vh;
+    height: 45vh; /* На всю высоту экрана */
     overflow: hidden;
     color: white;
 }
@@ -845,31 +845,24 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 120%;
+    height: 120%; /* Больше высоты блока для эффекта движения */
     background-image: url('images/booking-bg.jpeg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed; /* Ключевое свойство для параллакса */
+        object-fit: cover;
     z-index: 1;
-    
-    /* Для десктопов */
-    background-attachment: fixed;
-    
-    /* Для мобильных - альтернатива */
-    @media (max-width: 768px) {
-        position: fixed;
-        background-attachment: scroll;
-    }
 }
 
 .parallax-content {
     position: relative;
     height: 100%;
     display: flex;
-    align-items: flex-start;
-    padding-top: 20px;
+    align-items: flex-start; /* Контент прижмётся к верху */;
+    padding-top: 20px; /* Добавьте это для небольшого отступа */
     justify-content: center;
     z-index: 2;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* Затемнение фона */
 }
 
 .container {
