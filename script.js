@@ -161,10 +161,28 @@ window.addEventListener('scroll', function() {
     parallax.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
 });
 
-
-
-
-
-
-
+document.addEventListener('DOMContentLoaded', function() {
+    const parallax = document.querySelector('.parallax-image');
+    const parallaxSection = document.querySelector('.parallax-booking');
+    
+    if (!parallax) return;
+    
+    function updateParallax() {
+        const rect = parallaxSection.getBoundingClientRect();
+        const scrollPosition = window.pageYOffset;
+        const elementPosition = rect.top + scrollPosition;
+        const distance = scrollPosition - elementPosition;
         
+        // Параллакс-эффект только когда элемент видим
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            parallax.style.transform = `translate3d(0, ${distance * 0.3}px, 0)`;
+        }
+    }
+    
+    // Запускаем только на мобильных
+    if (window.innerWidth <= 768) {
+        window.addEventListener('scroll', updateParallax);
+        window.addEventListener('resize', updateParallax);
+        updateParallax(); // Инициализация
+    }
+});  
