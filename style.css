@@ -19,6 +19,15 @@ body {
     line-height: 1.6;
 }
 
+@font-face {
+    font-family: 'Podarok'; /* Название шрифта */
+    src: 
+         url('../fonts/Podarok.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Оптимизация загрузки */
+}
+
 .container {
     width: 100%;
     max-width: 1200px;
@@ -260,17 +269,17 @@ body {
     justify-content: flex-end;
     position: relative;
     z-index: 100;
-    padding-left: 20px; /* Отступ от лого */
+    padding-left: 10px; /* Отступ от лого */
 }
 
 /* Основные стили навигации */
 .nav-link {
     font-family: 'Podarok', sans-serif;
-    font-size: 20px; /* Увеличили размер шрифта */
+    font-size: 25px; /* Увеличили размер шрифта */
     font-weight: 500; /* Средняя насыщенность */
     text-decoration: none !important;
     color: #F5DEB3;
-    padding: 0 20px; /* Увеличили отступы между пунктами */
+    padding: 0 10px; /* Увеличили отступы между пунктами */
     transition: all 0.4s ease;
     position: relative;
 }
@@ -446,8 +455,8 @@ body {
         justify-content: flex-end; /* Прижимаем к правому краю */
         align-items: center;
         width: 100%;
-        gap: 5px; /* Отступ между ссылками */
-        padding-left: 20px; /* Отступ слева для логотипа/других элементов */
+        gap: 15px; /* Отступ между ссылками */
+        padding-left: 10px; /* Отступ слева для логотипа/других элементов */
         overflow-x: auto; /* Горизонтальная прокрутка, если не помещается */
         -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
     }
