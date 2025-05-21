@@ -12,19 +12,38 @@
 </head>
 <body>
     <!-- Навигационная панель -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo-container">
-                <img src="images/logo.png" alt="Логотип" class="logo">
-            </div>
-            <div class="nav-links">
-                <a href="#about" class="nav-link">О нас</a>
-                <a href="#catalog" class="nav-link">Каталог</a>
-                <a href="#included" class="nav-link">Что включено</a>
-                <a href="#contacts" class="nav-link">Контакты</a>
-            </div>
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Логотип" class="logo" id="logo">
         </div>
-    </nav>
+        <div class="nav-links">
+            <a href="#about" class="nav-link">О нас</a>
+            <a href="#catalog" class="nav-link">Каталог</a>
+            <a href="#included" class="nav-link">Что включено</a>
+            <a href="#contacts" class="nav-link">Контакты</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Плавный скролл по якорям
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            if(targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Логика клика на логотип — скроллим вверх
+    document.getElementById('logo').addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
 
 
 
@@ -59,11 +78,12 @@
             <div class="about-text">
                 <p class="intro-text">Есть - туристические компании. А есть - люди, окрыленные идеей создать незабываемые впечатления и заботу о каждом госте.</p>
                 
-                <p class="highlight-text">"Дагестанский орел"</strong> - мы те, кому важна каждая деталь.</p>
+                <p class="highlight-text"><strong>"Дагестанский орел"</strong> - мы те, кому важна каждая деталь.</p>
                 
                 <p>Для нас вы - не просто туристы. Для нас вы - любимые гости, и мы хотим завоевать каждое сердце настоящим кавказским гостеприимством и добротой.</p>
                 
                 <p>Интересные маршруты, захватывающие дух виды, античная история, самобытность культуры и традиций, опытные гиды и уютные апартаменты ждут вас. Путешествие измеряется яркостью впечатлений - и мы готовы подарить вам всю палитру.<br> Проживите эту маленькую жизнь вместе с нами. И будьте уверены - никто не останется равнодушным.</p>
+
             </div>
             
             <!-- Галерея из 4 фото -->

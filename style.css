@@ -87,19 +87,19 @@ body {
 
 
 .cta-button, .book-button {
-        
-    position: relative;
-    background: transparent;
-    color: transparent;
-    border: none;
-    padding: 12px 25px;
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    border-radius: 4px;
-    letter-spacing: 1px;
-    margin-top: auto;
+      margin-top: 30000px; /* Добавляем отступ сверху */
     margin-bottom: 20px;
+  position: relative;
+  background: transparent;
+  color: transparent;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 4px;
+  letter-spacing: 1px;
+    margin-bottom: 20px; /* Добавляем отступ */
     overflow: hidden;
     transition: all 0.4s ease;
     z-index: 1;
@@ -327,6 +327,16 @@ body {
     z-index: 110; /* Логотип поверх навигации */
     margin-right: 30px;
     flex-shrink: 0; /* Запрещаем сжатие */
+        transition: transform 0.3s ease; /* Плавное увеличение при наведении */
+}
+
+.logo:hover {
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+
+.logo-link {
+    display: inline-block; /* Чтобы можно было задать размеры */
+    text-decoration: none; /* Убираем подчеркивание */
 }
 
 .nav-links {
@@ -587,6 +597,7 @@ body {
     }
     
     .cta-button {
+        margin-top: 300px; /* Добавляем отступ сверху */
         padding: 10px 20px;
         font-size: 0.9rem;
     }
