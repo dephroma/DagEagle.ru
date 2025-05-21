@@ -265,6 +265,7 @@ body {
     text-decoration: none !important; /* Убираем подчеркивание */
     position: relative;
     transition: all 0.4s ease;
+    color: #F5DEB3; /* Песочный цвет по умолчанию */
 }
 
 /* Градиентный цвет текста */
@@ -277,11 +278,13 @@ body {
 }
 
 
-/* Эффект при наведении */
+/* Градиент только при наведении */
 .nav-link:hover {
-    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-    transform: translateY(-2px);
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, #F5DEB3 0%, #FFD700 50%, #FFA500 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
 }
 
 body {
