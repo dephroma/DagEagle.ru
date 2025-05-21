@@ -446,7 +446,7 @@ body {
         justify-content: flex-end; /* Прижимаем к правому краю */
         align-items: center;
         width: 100%;
-        gap: 15px; /* Отступ между ссылками */
+        gap: 5px; /* Отступ между ссылками */
         padding-left: 20px; /* Отступ слева для логотипа/других элементов */
         overflow-x: auto; /* Горизонтальная прокрутка, если не помещается */
         -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
