@@ -295,12 +295,13 @@ body {
 
 /* Градиент только при наведении */
 .nav-link:hover {
-    background: linear-gradient(135deg, #F5DEB3 0%, #FFD700 50%, #FFA500 100%);
+    background: linear-gradient(135deg, #f5d496 0%, #E67E22 50%, #FFA500 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     text-shadow: none;
 }
+
 
 body {
     padding-top: 80px;
@@ -465,9 +466,10 @@ body {
         background: linear-gradient(135deg, #F5DEB3 0%, #FFD700 100%);
         -webkit-background-clip: text;
         background-clip: text;
+        transition: all 0.4s ease;
     }
 
-    /* Для очень узких экранов */
+    /* Для мобильных экранов */
     @media (max-width: 480px) {
         .nav-links {
             gap: 10px;
