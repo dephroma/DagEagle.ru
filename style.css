@@ -169,6 +169,46 @@ body {
     background: rgba(0, 0, 0, 0.7); /* Чуть темнее при наведении */
 }
 
+/* Анимация появления */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Применяем анимацию к элементам героя */
+.hero h1 {
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero .subtitle {
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.hero .description p {
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.hero .description p:nth-child(2) {
+    animation-delay: 0.8s;
+}
+
+.hero .description p:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.hero .description p:nth-child(4) {
+    animation-delay: 1.2s;
+}
+
+.hero .cta-button {
+    animation: fadeInUp 1s ease-out 1.4s both;
+}
 
 
 
