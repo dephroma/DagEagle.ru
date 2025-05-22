@@ -555,37 +555,38 @@ body {
 }
 
 
-
 /* Общие стили кнопки (аналогично .cta-button) */
+
+/* Общие стили для обеих кнопок */
+
+
+.cta-button, 
 .book-btn {
-      text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);  /* Тень текста */
     position: relative;
     background: transparent;
-    color: transparent; /* Прозрачный цвет (градиент добавим ниже) */
+    color: transparent;
     border: none;
     padding: 12px 25px;
-    font-family: 'Montserrat', sans-serif; /* Или 'Equilibrist' */
     font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;
-    border-radius: 4px;
     letter-spacing: 1px;
+    border-radius: 4px;
     cursor: pointer;
     overflow: hidden;
     transition: all 0.4s ease;
-    z-index: 1; /* Главный слой для текста */
+    z-index: 1;
     margin: 10px 0;
-    text-decoration: none;
-    display: inline-block;
-
-    /* Градиент текста (теперь работает!) */
+    
+    /* Градиент текста */
     background: linear-gradient(135deg, #F5DEB3 0%, #FFD700 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* Стеклянная подложка - убираем перекрытие текста */
+/* Стекло-подложка */
+.cta-button::before,
 .book-btn::before {
     content: '';
     position: absolute;
@@ -597,12 +598,13 @@ body {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border-radius: 4px;
-    z-index: -1; /* Отправляем под текст */
+    z-index: -1;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.4s ease;
 }
 
-/* Градиентная рамка - тоже под текстом */
+/* Градиентная рамка */
+.cta-button::after,
 .book-btn::after {
     content: '';
     position: absolute;
@@ -612,12 +614,13 @@ body {
     bottom: -2px;
     background: linear-gradient(135deg, #F5DEB3 0%, #FFD700 100%);
     border-radius: 5px;
-    z-index: -2; /* Ещё ниже */
+    z-index: -2;
     opacity: 0.7;
     transition: all 0.4s ease;
 }
 
 /* Эффекты при наведении */
+.cta-button:hover,
 .book-btn:hover {
     background: linear-gradient(135deg, #F5DEB3 0%, #E67E22 50%, #FFA500 100%);
     -webkit-background-clip: text;
@@ -626,19 +629,23 @@ body {
     text-shadow: 0 0 10px rgba(230, 126, 34, 0.3);
 }
 
+.cta-button:hover::after,
 .book-btn:hover::after {
     background: linear-gradient(135deg, #F5DEB3 0%, #E67E22 50%, #FFA500 100%);
     opacity: 0.9;
 }
 
+.cta-button:hover::before,
 .book-btn:hover::before {
     background: rgba(0, 0, 0, 0.7);
 }
 
-/* Эффект при нажатии */
-.book-btn:active {
-    transform: translateY(1px);
+/* Анимация появления */
+.book-btn {
+    animation: fadeInUp 1s ease-out 0.2s both;
 }
+
+
 
 
 
