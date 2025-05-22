@@ -529,7 +529,7 @@ body {
 .catalog-content h3 {
     font-size: 24px;
     margin-bottom: 15px;
-    color: #7394b6;
+    color: #f0ca90;
 }
 
 .catalog-content p {
@@ -545,19 +545,19 @@ body {
 
 .tour-route li {
     margin-bottom: 8px;
-    color: #555;
+    color: #ececec;
 }
 
 .duration {
     margin: 15px 0;
     font-weight: bold;
-    color: #3498db;
+    color: #60a8d8;
 }
 
 .book-btn {
     align-self: flex-start;
     padding: 12px 25px;
-        background: linear-gradient(135deg, #F5DEB3 0%, #FFD700 100%);
+        background: linear-gradient(135deg, #3588a1 0%, #1a95ce 100%);
     color: white;
     border: none;
     border-radius: 5px;
