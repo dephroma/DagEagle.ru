@@ -473,7 +473,7 @@ body {
 .feature-title {
     font-size: 20px;
     margin-bottom: 15px;
-    color: #82baf1;
+    color: #8cc5ff;
 }
 
 .feature-text {
@@ -497,7 +497,7 @@ body {
 .catalog-item {
     display: flex;
     margin-bottom: 40px;
-    background: rgb(109, 109, 109);
+    background: rgb(133, 133, 133);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -533,7 +533,7 @@ body {
 }
 
 .catalog-content p {
-    color: #838383;
+    color: #7a7a7a;
     line-height: 1.6;
     margin-bottom: 20px;
 }
@@ -551,13 +551,13 @@ body {
 .duration {
     margin: 15px 0;
     font-weight: bold;
-    color: #60a8d8;
+    color: #94d4ff;
 }
 
 .book-btn {
     align-self: flex-start;
     padding: 12px 25px;
-        background: linear-gradient(135deg, #3588a1 0%, #1a95ce 100%);
+        background: linear-gradient(135deg, #fc9566 0%, #df432e 100%);
     color: white;
     border: none;
     border-radius: 5px;
