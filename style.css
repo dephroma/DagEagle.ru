@@ -293,7 +293,7 @@ body {
     color: #333;
 }
 
-.book-button {
+.book-btn {
     display: block;
     margin: 0 auto;
 }
@@ -473,11 +473,11 @@ body {
 .feature-title {
     font-size: 20px;
     margin-bottom: 15px;
-    color: #2c3e50;
+    color: #82baf1;
 }
 
 .feature-text {
-    color: #666;
+    color: #c4c4c4;
     line-height: 1.6;
     font-size: 16px;
 }
@@ -491,13 +491,13 @@ body {
     text-align: center;
     margin-bottom: 60px;
     font-size: 36px;
-    color: #2c3e50;
+    color: #50422c;
 }
 
 .catalog-item {
     display: flex;
     margin-bottom: 40px;
-    background: white;
+    background: rgb(109, 109, 109);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -529,11 +529,11 @@ body {
 .catalog-content h3 {
     font-size: 24px;
     margin-bottom: 15px;
-    color: #2c3e50;
+    color: #7394b6;
 }
 
 .catalog-content p {
-    color: #555;
+    color: #838383;
     line-height: 1.6;
     margin-bottom: 20px;
 }
@@ -557,7 +557,7 @@ body {
 .book-btn {
     align-self: flex-start;
     padding: 12px 25px;
-    background-color: #e74c3c;
+        background: linear-gradient(135deg, #F5DEB3 0%, #FFD700 100%);
     color: white;
     border: none;
     border-radius: 5px;
@@ -724,13 +724,13 @@ body {
 .card-content h3 {
     font-size: 24px;
     margin: 0 0 15px 0;
-    color: #2c3e50;
+    color: #354a5f;
     font-weight: 700;
     text-align: left; /* Заголовки слева */
 }
 
 .card-content p {
-    color: #555;
+    color: #c9c9c9;
     line-height: 1.6;
     margin-bottom: 20px;
     text-align: left; /* Текст слева */
