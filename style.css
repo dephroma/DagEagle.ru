@@ -557,8 +557,8 @@ body {
 .book-btn {
     align-self: flex-start;
     padding: 12px 25px;
-        background: linear-gradient(135deg, #fc9566 0%, #df432e 100%);
-    color: white;
+       background: linear-gradient(135deg, #fc9566 0%, #df432e 100%);   /*  кнопка Забронировать */
+    color: rgb(255, 255, 255);    /*  текст кнопки Забронировать */
     border: none;
     border-radius: 5px;
     cursor: pointer;
