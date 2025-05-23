@@ -913,12 +913,7 @@ body {
     padding: 20px;
 }
 
-/* Только для десктопов */
-@media (min-width: 769px) {
-    .parallax-image {
-        background-attachment: fixed;
-    }
-}
+
 
 
 .container {
