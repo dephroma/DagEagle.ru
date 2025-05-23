@@ -440,7 +440,7 @@ body {
     text-align: center;
     margin-bottom: 50px;
     font-size: 32px;
-    color: #333;
+    color: #d8d8d8;
 }
 
 .features-grid {
@@ -1004,8 +1004,8 @@ body {
 
 .section-subtitle {
   text-align: center;
-  font-size: 16px;
-  color: #666;
+  font-size: 18px;
+  color: #b6b6b6;
   margin-bottom: 40px;
 }
 
@@ -1222,7 +1222,7 @@ body {
   text-align: center;
   position: relative;
   background: 
-    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
     url('images/DAGEAGLEBOT.jpeg') center/cover;
 }
 
