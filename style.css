@@ -998,6 +998,10 @@ body {
         padding: 12px 30px;
         font-size: 16px;
     }
+
+      .parallax-booking {
+    background-image: url('../images/booking-bg.jpeg');
+  }
 }
 
 
