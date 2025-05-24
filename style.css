@@ -448,7 +448,7 @@ body {
 
 /* Основные стили навигации */
 .nav-link {
-    font-family: 'Podarok', sans-serif;
+    font-family: 'Equilibrist', sans-serif;
     font-size: 25px; /* Увеличили размер шрифта */
     font-weight: 500; /* Средняя насыщенность */
     text-decoration: none !important;
