@@ -286,3 +286,24 @@ function showThankYouModal() {
     modal.style.display = 'none';
   }, 5000);
 }
+
+module.exports = {
+  extends: ['eslint:recommended'],
+  plugins: ['html', 'css'],
+  overrides: [
+    {
+      files: ['*.html'],
+      processor: 'html/html',
+      rules: {
+        // Правила для HTML
+      }
+    },
+    {
+      files: ['*.css'],
+      processor: 'css/css',
+      rules: {
+        // Правила для CSS
+      }
+    }
+  ]
+}
