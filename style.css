@@ -999,9 +999,14 @@ body {
         font-size: 16px;
     }
 
-      .parallax-booking {
-    background-image: url('../images/booking-bg-mobile.jpeg');
-  }
+    .parallax-booking {
+        background-image: url('../images/booking-bg-mobile.jpeg');
+        background-position: center center; /* Центрирование по горизонтали и вертикали */
+        background-size: cover; /* Заполнение области с сохранением пропорц1ий */
+        background-repeat: no-repeat; /* Запрет повторения изображения */
+        background-attachment: scroll; /* Фиксируем фон для мобильных */
+    }
+
 }
 
 
