@@ -66,7 +66,7 @@ body {
   line-height: 1.2;
   
   /* Градиент от песочного (#F5DEB3) к золотому (#FFD700) */
-  background: linear-gradient(135deg, #ffe675 0%, #ffd904 100%);
+  background: linear-gradient(135deg, #ff0095 0%, #ff04abf1 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
