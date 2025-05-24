@@ -28,10 +28,11 @@ body {
 }
 
 @font-face {
-  font-family: 'Equilibrist';
-  src: url('..fonts/Equilibrist.ttf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Equilibrist';
+    src: url('../fonts/Equilibrist.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Оптимизация загрузки */
 }
 
 .container {
@@ -1311,7 +1312,7 @@ body {
     background-size: 18px;
     background-position: right 12px center;
   }
-  
+
 }
 
 
