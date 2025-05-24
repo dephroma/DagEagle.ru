@@ -2,6 +2,9 @@
   "dependencies": {
     "link": "^2.1.1",
     "netlify": "^21.5.0"
+  },
+  "devDependencies": {
+    "eslint-plugin-css": "^0.11.0",
+    "eslint-plugin-html": "^8.1.3"
   }
 }
-
