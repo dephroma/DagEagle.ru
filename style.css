@@ -296,10 +296,7 @@ body {
     color: #333;
 }
 
-.book-btn {
-    display: block;
-    margin: 0 auto;
-}
+
 
 /* О компании */
 .about-company {
@@ -558,23 +555,46 @@ body {
     color: #94d4ff;
 }
 
+
+ /*  КНОПКА Забронировать */
+
 .book-btn {
+    display: block;
+    margin: 0 auto;
     align-self: flex-start;
     padding: 12px 25px;
-       background: linear-gradient(135deg, #fc9566 0%, #df432e 100%);   /*  кнопка Забронировать */
-    color: rgb(255, 255, 255);    /*  текст кнопки Забронировать */
-    border: none;
+    background: linear-gradient(135deg, #fc9566 0%, #df432e 100%);
+    color: #fff;
+    border: 2px solid #e4dbbe; /* песочно-золотая рамка */
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s;
-            font-size: 22px;
+    font-size: 22px;
     font-family: 'Montserrat', sans-serif;
+    transition: background 0.4s ease, transform 0.2s ease, border-color 0.3s ease;
+    user-select: none;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(223, 67, 46, 0.4);
+    background-clip: padding-box; /* чтобы рамка не накладывалась на градиент */
 }
 
 .book-btn:hover {
-    background-color: #c0392b;
+    background: linear-gradient(135deg, #df432e 0%, #b33127 100%);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(223, 67, 46, 0.6);
+    border-color: #f7d66a; /* светлее золотой при ховере */
 }
+
+.book-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(176, 43, 34, 0.7);
+    transition: transform 0.1s ease;
+    border-color: #c79c29; /* чуть темнее при клике */
+}
+
+
+
+
 
 
 @media (max-width: 768px) {
