@@ -107,10 +107,13 @@ body {
 }
 
 .hero .subtitle {
+
+    
     font-size: 1.5rem;
     margin-bottom: 40px;
     font-weight: 300;
     width: 100%;
+    
 }
 
 .hero .description {
@@ -127,6 +130,14 @@ body {
 }
 
 
+.text-wrapper {
+  background-color: rgba(0,0,0,0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: white;
+}
 
 
 /* Кнопки */
