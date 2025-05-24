@@ -59,14 +59,51 @@ body {
 
 .hero h1 {
   font-family: 'Equilibrist', serif;
-    font-size: 3rem;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    line-height: 1.2;
-    word-wrap: break-word;
-    padding: 0 10px;
-    width: 100%;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  
+  /* Градиент от песочного (#F5DEB3) к золотому (#FFD700) */
+  background: linear-gradient(135deg, #ffe570 0%, #ffd904 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  
+  /* Эффект свечения */
+  text-shadow: 
+    0 0 10px rgba(245, 222, 179, 0.7), /* Песочное свечение */
+    0 0 20px rgba(255, 215, 0, 0.5); /* Золотое свечение */
+  
+  /* Анимация мерцания */
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+/* Анимация свечения */
+@keyframes glow {
+  from {
+    text-shadow: 
+      0 0 5px rgba(245, 222, 179, 0.7),
+      0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  to {
+    text-shadow: 
+      0 0 15px rgba(245, 222, 179, 0.9),
+      0 0 25px rgba(255, 215, 0, 0.7),
+      0 0 35px rgba(255, 215, 0, 0.4);
+  }
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+    text-shadow: 
+      0 0 5px rgba(245, 222, 179, 0.7),
+      0 0 10px rgba(255, 215, 0, 0.5);
+  }
 }
 
 .hero .subtitle {
