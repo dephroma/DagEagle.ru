@@ -194,116 +194,48 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById('telegramForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   
-  const form = e.target;
-  const submitBtn = form.querySelector('button[type="submit"]');
-  const submitText = document.getElementById('submit-text');
-  const submitSpinner = document.getElementById('submit-spinner');
-  const formMessage = document.getElementById('form-message');
+  const BOT_TOKEN = '8002070265:AAHDrrfBOgix9tiJlpzF6Xk55UOSeZvZfE0'; // Замените!
+  const CHAT_ID = '344059739'; // Замените!
   
-  // Показываем индикатор загрузки
-  submitText.style.display = 'none';
-  submitSpinner.style.display = 'inline';
-  submitBtn.disabled = true;
-  formMessage.textContent = '';
-  formMessage.style.display = 'none';
+  const form = e.target;
+  const formData = new FormData(form);
+  
+  // 1. Формируем сообщение
+  let messageText = '📌 <b>Новая заявка</b>\n\n';
+  for (let [key, value] of formData.entries()) {
+    if (key === 'chat_id') continue;
+    messageText += `🔹 <b>${key}:</b> ${value || 'Не указано'}\n`;
+  }
+
+  // 2. Логируем данные перед отправкой
+  console.log('Форма данных:', Object.fromEntries(formData));
+  console.log('Текст сообщения:', messageText);
 
   try {
-    // Формируем текст сообщения
-    const formData = new FormData(form);
-    let messageText = '📌 <b>Новая заявка на тур</b>\n\n';
-    
-    // Собираем данные из формы
-    const formFields = {
-      'Имя': formData.get('name'),
-      'Телефон': formData.get('phone'),
-      'Тур': formData.get('tour') || 'Не указан',
-      'Количество человек': formData.get('people') || '1',
-      'Дата': formData.get('date') || 'Не указана',
-      'Комментарий': formData.get('message') || 'Нет комментария'
-    };
-    
-    // Формируем сообщение
-    for (const [key, value] of Object.entries(formFields)) {
-      messageText += `🔹 <b>${key}:</b> ${value}\n`;
-    }
-
-    // Важные константы (замените на свои!)
-    const BOT_TOKEN = '8002070265:AAHDrrfBOgix9tiJlpzF6Xk55UOSeZvZfE0'; // Например: '123456789:ABCdefGHIJKlmNoPQRsTUVwxyZ'
-    const CHAT_ID = '344059739'; // Например: '123456789' или '-1001234567890' для групп
-
-    // Отправляем в Telegram
+    // 3. Отправка
     const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        chat_id: CHAT_ID, // Используем константу вместо formData.get('chat_id')
+        chat_id: CHAT_ID,
         text: messageText,
         parse_mode: 'HTML'
       })
     });
 
+    // 4. Проверяем ответ
     const data = await response.json();
+    console.log('Ответ Telegram:', data);
 
-    if (data.ok) {
-      // Показываем модальное окно благодарности
-      showThankYouModal();
-      form.reset();
-    } else {
-      throw new Error(data.description || 'Ошибка отправки');
+    if (!data.ok) {
+      throw new Error(data.description || 'Unknown Telegram error');
     }
+
+    alert('✅ Заявка отправлена!');
+    form.reset();
+
   } catch (error) {
-    formMessage.textContent = '❌ Ошибка отправки. Пожалуйста, свяжитесь с нами через Telegram или по телефону.';
-    formMessage.style.color = 'red';
     console.error('Ошибка:', error);
-  } finally {
-    formMessage.style.display = 'block';
-    submitText.style.display = 'inline';
-    submitSpinner.style.display = 'none';
-    submitBtn.disabled = false;
+    alert(`❌ Ошибка: ${error.message}\nПопробуйте связаться другим способом.`);
   }
 });
-
-// Функция для показа модального окна
-function showThankYouModal() {
-  const modal = document.getElementById('thankYouModal');
-  modal.style.display = 'block';
-  
-  // Закрытие при клике на крестик
-  document.querySelector('.close-modal').onclick = () => modal.style.display = 'none';
-  
-  // Закрытие при клике на кнопку
-  document.querySelector('.modal-close-btn').onclick = () => modal.style.display = 'none';
-  
-  // Закрытие при клике вне окна
-  window.onclick = (event) => {
-    if (event.target === modal) modal.style.display = 'none';
-  };
-  
-  // Автозакрытие через 5 секунд
-  setTimeout(() => {
-    modal.style.display = 'none';
-  }, 5000);
-}
-
-module.exports = {
-  extends: ['eslint:recommended'],
-  plugins: ['html', 'css'],
-  overrides: [
-    {
-      files: ['*.html'],
-      processor: 'html/html',
-      rules: {
-        // Правила для HTML
-      }
-    },
-    {
-      files: ['*.css'],
-      processor: 'css/css',
-      rules: {
-        // Правила для CSS
-      }
-    }
-  ]
-}
