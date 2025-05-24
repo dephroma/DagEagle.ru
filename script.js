@@ -193,16 +193,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.getElementById('telegramForm').addEventListener('submit', async function(e) {
   e.preventDefault();
-
-  const response = await fetch(`https://api.telegram.org/8002070265:AAHDrrfBOgix9tiJlpzF6Xk55UOSeZvZfE0/sendMessage`, {
-  method: 'POST',
-  headers: {'Content-Type': 'application/json'},
-  body: JSON.stringify({
-    chat_id: "344059739",  // Здесь указывается chat_id
-    text: "Текст сообщения",
-    parse_mode: 'HTML'
-  })
-});
   
   const form = e.target;
   const submitBtn = form.querySelector('button[type="submit"]');
@@ -222,21 +212,33 @@ document.getElementById('telegramForm').addEventListener('submit', async functio
     const formData = new FormData(form);
     let messageText = '📌 <b>Новая заявка на тур</b>\n\n';
     
-    for (let [key, value] of formData.entries()) {
-      if (key === 'chat_id') continue;
-      if (!value) continue;
-      
+    // Собираем данные из формы
+    const formFields = {
+      'Имя': formData.get('name'),
+      'Телефон': formData.get('phone'),
+      'Тур': formData.get('tour') || 'Не указан',
+      'Количество человек': formData.get('people') || '1',
+      'Дата': formData.get('date') || 'Не указана',
+      'Комментарий': formData.get('message') || 'Нет комментария'
+    };
+    
+    // Формируем сообщение
+    for (const [key, value] of Object.entries(formFields)) {
       messageText += `🔹 <b>${key}:</b> ${value}\n`;
     }
 
+    // Важные константы (замените на свои!)
+    const BOT_TOKEN = '8002070265:AAHDrrfBOgix9tiJlpzF6Xk55UOSeZvZfE0'; // Например: '123456789:ABCdefGHIJKlmNoPQRsTUVwxyZ'
+    const CHAT_ID = '344059739'; // Например: '123456789' или '-1001234567890' для групп
+
     // Отправляем в Telegram
-    const response = await fetch(`https://api.telegram.org/botВАШ_BOT_TOKEN/sendMessage`, {
+    const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        chat_id: formData.get('chat_id'),
+        chat_id: CHAT_ID, // Используем константу вместо formData.get('chat_id')
         text: messageText,
         parse_mode: 'HTML'
       })
@@ -245,8 +247,8 @@ document.getElementById('telegramForm').addEventListener('submit', async functio
     const data = await response.json();
 
     if (data.ok) {
-      formMessage.textContent = '✅ Заявка отправлена! Мы свяжемся с вами в ближайшее время.';
-      formMessage.style.color = 'green';
+      // Показываем модальное окно благодарности
+      showThankYouModal();
       form.reset();
     } else {
       throw new Error(data.description || 'Ошибка отправки');
@@ -262,3 +264,25 @@ document.getElementById('telegramForm').addEventListener('submit', async functio
     submitBtn.disabled = false;
   }
 });
+
+// Функция для показа модального окна
+function showThankYouModal() {
+  const modal = document.getElementById('thankYouModal');
+  modal.style.display = 'block';
+  
+  // Закрытие при клике на крестик
+  document.querySelector('.close-modal').onclick = () => modal.style.display = 'none';
+  
+  // Закрытие при клике на кнопку
+  document.querySelector('.modal-close-btn').onclick = () => modal.style.display = 'none';
+  
+  // Закрытие при клике вне окна
+  window.onclick = (event) => {
+    if (event.target === modal) modal.style.display = 'none';
+  };
+  
+  // Автозакрытие через 5 секунд
+  setTimeout(() => {
+    modal.style.display = 'none';
+  }, 5000);
+}
