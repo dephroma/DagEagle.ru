@@ -523,6 +523,7 @@ body {
 .catalog-content {
     flex: 1;
     padding: 30px;
+        padding-bottom: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
