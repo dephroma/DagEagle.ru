@@ -1,241 +1,198 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const track = document.querySelector('.reviews-track');
-  const prevBtn = document.querySelector('.carousel-prev');
-  const nextBtn = document.querySelector('.carousel-next');
-  const cards = document.querySelectorAll('.review-card');
-  const cardCount = cards.length;
-  
-  if (cardCount === 0) return;
-  
-  const cardWidth = cards[0].offsetWidth + 30; // включая gap
-  let currentIndex = 0;
-  let autoScrollInterval;
-  
-  // Клонируем первые несколько карточек в конец для бесшовной прокрутки
-  for (let i = 0; i < 3; i++) {
-    const clone = cards[i].cloneNode(true);
-    track.appendChild(clone);
-  }
-  
-  function updateCarousel() {
-    track.style.transition = 'transform 0.5s ease-in-out';
-    track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+  // ========== Карусель отзывов ==========
+  const initCarousel = () => {
+    const track = document.querySelector('.reviews-track');
+    const prevBtn = document.querySelector('.carousel-prev');
+    const nextBtn = document.querySelector('.carousel-next');
+    const cards = document.querySelectorAll('.review-card');
     
-    // Когда доходим до клонов, мгновенно переходим к началу
-    if (currentIndex >= cardCount) {
-      setTimeout(() => {
-        track.style.transition = 'none';
-        currentIndex = 0;
-        track.style.transform = `translateX(0)`;
-      }, 500);
+    if (!track || !prevBtn || !nextBtn || cards.length === 0) return;
+    
+    const cardCount = cards.length;
+    const cardWidth = cards[0].offsetWidth + 30;
+    let currentIndex = 0;
+    let autoScrollInterval;
+    
+    // Клонируем первые несколько карточек
+    for (let i = 0; i < Math.min(3, cardCount); i++) {
+      track.appendChild(cards[i].cloneNode(true));
     }
-  }
-  
-  function startAutoScroll() {
-    autoScrollInterval = setInterval(() => {
-      currentIndex++;
-      updateCarousel();
-    }, 3000);
-  }
-  
-  function stopAutoScroll() {
-    clearInterval(autoScrollInterval);
-  }
-  
-  // Инициализация
-  updateCarousel();
-  startAutoScroll();
-  
-  // Управление кнопками
-  nextBtn.addEventListener('click', () => {
-    stopAutoScroll();
-    currentIndex++;
+    
+    function updateCarousel() {
+      track.style.transition = 'transform 0.5s ease-in-out';
+      track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+      
+      if (currentIndex >= cardCount) {
+        setTimeout(() => {
+          track.style.transition = 'none';
+          currentIndex = 0;
+          track.style.transform = `translateX(0)`;
+        }, 500);
+      }
+    }
+    
+    function startAutoScroll() {
+      autoScrollInterval = setInterval(() => {
+        currentIndex++;
+        updateCarousel();
+      }, 3000);
+    }
+    
+    // Инициализация
     updateCarousel();
     startAutoScroll();
-  });
-  
-  prevBtn.addEventListener('click', () => {
-    stopAutoScroll();
-    currentIndex = currentIndex <= 0 ? cardCount - 1 : currentIndex - 1;
-    track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-    startAutoScroll();
-  });
-  
-  // Пауза при наведении
-  track.addEventListener('mouseenter', stopAutoScroll);
-  track.addEventListener('mouseleave', startAutoScroll);
-  
-  // Пересчёт при изменении размера окна
-  window.addEventListener('resize', () => {
-    const newCardWidth = cards[0].offsetWidth + 30;
-    if (Math.abs(cardWidth - newCardWidth) > 5) {
-      cardWidth = newCardWidth;
+    
+    // Управление кнопками
+    nextBtn.addEventListener('click', () => {
+      clearInterval(autoScrollInterval);
+      currentIndex++;
       updateCarousel();
-    }
-  });
-});
-
-document.getElementById('tourBookingForm').addEventListener('submit', function(e) {e.preventDefault();
-  
-  // Собираем данные формы
-  const formData = {
-    name: document.getElementById('name').value,
-    guests: document.getElementById('guests').value,
-    date: document.getElementById('date').value,
-    tour: document.getElementById('tour').value,
-    phone: document.getElementById('phone').value,
-    email: document.getElementById('email').value
+      startAutoScroll();
+    });
+    
+    prevBtn.addEventListener('click', () => {
+      clearInterval(autoScrollInterval);
+      currentIndex = currentIndex <= 0 ? cardCount - 1 : currentIndex - 1;
+      updateCarousel();
+      startAutoScroll();
+    });
+    
+    track.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
+    track.addEventListener('mouseleave', startAutoScroll);
   };
 
-  // Отправка через Formspree (бесплатный сервис)
-  fetch('https://formspree.io/f/rromann192@gmail.com', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(formData),
-  })
-  .then(response => {
-    if (response.ok) {
-      alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
-      document.getElementById('tourBookingForm').reset();
-    } else {
-      throw new Error('Ошибка отправки');
+  // ========== Навигация ==========
+  const initNavigation = () => {
+    const navContainer = document.querySelector('.nav-container');
+    const scrollLeft = document.querySelector('.scroll-left');
+    const scrollRight = document.querySelector('.scroll-right');
+    
+    if (navContainer && scrollLeft && scrollRight) {
+      scrollLeft.addEventListener('click', () => {
+        navContainer.scrollBy({left: -100, behavior: 'smooth'});
+      });
+      
+      scrollRight.addEventListener('click', () => {
+        navContainer.scrollBy({left: 100, behavior: 'smooth'});
+      });
     }
-  })
-
-  
-  .catch(error => {
-    alert('Произошла ошибка при отправке. Пожалуйста, попробуйте позже.');
-    console.error('Error:', error);
-  });
-});
-
-
-        const navContainer = document.querySelector('.nav-container');
-document.querySelector('.scroll-left').addEventListener('click', () => {
-  navContainer.scrollBy({left: -100, behavior: 'smooth'});
-});
-document.querySelector('.scroll-right').addEventListener('click', () => {
-  navContainer.scrollBy({left: 100, behavior: 'smooth'});
-});
-
-// Маска для телефона
-document.getElementById('phone').addEventListener('input', function(e) {
-  let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
-  e.target.value = !x[2] ? x[1] : '+7 (' + x[2] + (x[3] ? ') ' + x[3] : '') + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
-});
-
-        // Подсветка активного раздела
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section');
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 100) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        window.addEventListener('scroll', function() {
+    
+    // Подсветка активного раздела
+    window.addEventListener('scroll', function() {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      if (sections.length === 0 || navLinks.length === 0) return;
+      
+      let current = '';
+      sections.forEach(section => {
+        if (window.pageYOffset >= section.offsetTop - 100) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+      });
+    });
+    
+    // Изменение фона навигации
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-    } else {
-        navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+    if (navbar) {
+      window.addEventListener('scroll', function() {
+        navbar.style.backgroundColor = window.scrollY > 50 
+          ? 'rgba(0, 0, 0, 0.9)' 
+          : 'rgba(0, 0, 0, 0.7)';
+      });
     }
-});
+  };
 
-window.addEventListener('scroll', function() {
-    const parallax = document.querySelector('.parallax-image');
-    const scrollPosition = window.pageYOffset;
-    parallax.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
-});
-
-document.addEventListener('DOMContentLoaded', function() {
+  // ========== Параллакс ==========
+  const initParallax = () => {
     const parallax = document.querySelector('.parallax-image');
     const parallaxSection = document.querySelector('.parallax-booking');
     
-    if (!parallax) return;
+    if (!parallax || !parallaxSection) return;
     
     function updateParallax() {
-        const rect = parallaxSection.getBoundingClientRect();
-        const scrollPosition = window.pageYOffset;
-        const elementPosition = rect.top + scrollPosition;
-        const distance = scrollPosition - elementPosition;
-        
-        // Параллакс-эффект только когда элемент видим
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-            parallax.style.transform = `translate3d(0, ${distance * 0.3}px, 0)`;
-        }
+      const rect = parallaxSection.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        parallax.style.transform = `translate3d(0, ${window.pageYOffset * 0.3}px, 0)`;
+      }
     }
     
-    // Запускаем только на мобильных
     if (window.innerWidth <= 768) {
-        window.addEventListener('scroll', updateParallax);
-        window.addEventListener('resize', updateParallax);
-        updateParallax(); // Инициализация
+      window.addEventListener('scroll', updateParallax);
+      updateParallax();
     }
-});  
+  };
 
-
-
-
-
-document.getElementById('telegramForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  
-  const BOT_TOKEN = '8002070265:AAHDrrfBOgix9tiJlpzF6Xk55UOSeZvZfE0'; // Замените!
-  const CHAT_ID = '344059739'; // Замените!
-  
-  const form = e.target;
-  const formData = new FormData(form);
-  
-  // 1. Формируем сообщение
-  let messageText = '📌 <b>Новая заявка</b>\n\n';
-  for (let [key, value] of formData.entries()) {
-    if (key === 'chat_id') continue;
-    messageText += `🔹 <b>${key}:</b> ${value || 'Не указано'}\n`;
-  }
-
-  // 2. Логируем данные перед отправкой
-  console.log('Форма данных:', Object.fromEntries(formData));
-  console.log('Текст сообщения:', messageText);
-
-  try {
-    // 3. Отправка
-    const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        chat_id: CHAT_ID,
-        text: messageText,
-        parse_mode: 'HTML'
-      })
-    });
-
-    // 4. Проверяем ответ
-    const data = await response.json();
-    console.log('Ответ Telegram:', data);
-
-    if (!data.ok) {
-      throw new Error(data.description || 'Unknown Telegram error');
+  // ========== Формы ==========
+  const initForms = () => {
+    // Маска для телефона
+    const phoneInput = document.getElementById('phone');
+    if (phoneInput) {
+      phoneInput.addEventListener('input', function(e) {
+        let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+        e.target.value = !x[2] ? x[1] : '+7 (' + x[2] + (x[3] ? ') ' + x[3] : '') + 
+          (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
+      });
     }
+    
+    // Обработчик для telegramForm
+    const telegramForm = document.getElementById('telegramForm');
+    if (telegramForm) {
+      telegramForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const BOT_TOKEN = '8002070265:AAHDrrfBOgix9tiJlpzF6Xk55UOSeZvZfE0';
+        const CHAT_ID = '344059739';
+        
+        const formData = {
+          name: this.querySelector('[name="name"]').value,
+          phone: this.querySelector('[name="phone"]').value,
+          tour: this.querySelector('[name="tour"]').value || 'Не указан',
+          people: this.querySelector('[name="people"]').value || '1',
+          date: this.querySelector('[name="date"]').value || 'Не указана'
+        };
+        
+        const messageText = `📌 <b>Новая заявка</b>\n\n` +
+          Object.entries(formData).map(([key, value]) => 
+            `🔹 <b>${key}:</b> ${value}`
+          ).join('\n');
+        
+        try {
+          const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+              chat_id: CHAT_ID,
+              text: messageText,
+              parse_mode: 'HTML'
+            })
+          });
+          
+          const result = await response.json();
+          if (result.ok) {
+            alert('✅ Заявка отправлена!');
+            this.reset();
+          } else {
+            throw new Error(result.description || 'Ошибка Telegram API');
+          }
+        } catch (error) {
+          console.error('Ошибка:', error);
+          alert(`❌ Ошибка: ${error.message}`);
+        }
+      });
+    }
+    
+    // Удалите дублирующийся обработчик для tourBookingForm
+    // или используйте только один из них
+  };
 
-    alert('✅ Заявка отправлена!');
-    form.reset();
-
-  } catch (error) {
-    console.error('Ошибка:', error);
-    alert(`❌ Ошибка: ${error.message}\nПопробуйте связаться другим способом.`);
-  }
+  // Инициализация всех компонентов
+  initCarousel();
+  initNavigation();
+  initParallax();
+  initForms();
 });
