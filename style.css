@@ -97,46 +97,46 @@ body {
 }
 
 /* Адаптация для мобильных */
+/* Адаптация для мобильных */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2rem;
     text-shadow: 
-      0 0 5px rgba(245, 222, 179, 0.7),
-      0 0 10px rgba(255, 215, 0, 0.5);
+      0 0 3px rgba(245, 222, 179, 0.6),  /* Уменьшенное свечение */
+      0 0 6px rgba(255, 215, 0, 0.4);     /* Более тонкое золотое свечение */
+    
+    /* Упрощенная анимация для мобильных */
+    animation: mobile-glow 3s ease-in-out infinite alternate;
   }
-}
-
-.hero .subtitle {
-
-    
-    font-size: 1.5rem;
-    margin-bottom: 40px;
-    font-weight: 300;
-    width: 100%;
-    
-}
-
-.hero .description {
-    font-size: 1rem;
-    margin-bottom: 15px;
-    line-height: 1.6;
-    padding: 0 5px;
-}
-
-.hero .description p {
+  
+  /* Упрощенная анимация свечения для мобильных */
+  @keyframes mobile-glow {
+    from {
+      text-shadow: 
+        0 0 3px rgba(245, 222, 179, 0.6),
+        0 0 6px rgba(255, 215, 0, 0.4);
+    }
+    to {
+      text-shadow: 
+        0 0 8px rgba(245, 222, 179, 0.7),
+        0 0 12px rgba(255, 215, 0, 0.5);
+    }
+  }
+  
+  .hero .subtitle {
     font-size: 1.2rem;
-    margin-bottom: 15px;
-    line-height: 1.8;
-}
-
-
-.text-wrapper {
-  background-color: rgba(0,0,0,0.3);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  padding: 10px 15px;
-  border-radius: 8px;
-  color: white;
+    margin-bottom: 30px;
+  }
+  
+  .hero .description p {
+    font-size: 1rem;
+  }
+  
+  .text-wrapper {
+    padding: 8px 12px;
+    backdrop-filter: blur(3px); /* Меньше размытие для производительности */
+    -webkit-backdrop-filter: blur(3px);
+  }
 }
 
 
