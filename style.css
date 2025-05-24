@@ -1256,12 +1256,12 @@ body {
     padding: 20px;
   }
 
-  .form-group input,
+  /* .form-group input,
   .form-group select {
     padding: 12px;
     height: 45px;
     font-size: 15px;
-  }
+  } */
 }
 
 
