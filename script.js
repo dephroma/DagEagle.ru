@@ -186,3 +186,79 @@ document.addEventListener('DOMContentLoaded', function() {
         updateParallax(); // Инициализация
     }
 });  
+
+
+
+
+
+document.getElementById('telegramForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const response = await fetch(`https://api.telegram.org/8002070265:AAHDrrfBOgix9tiJlpzF6Xk55UOSeZvZfE0/sendMessage`, {
+  method: 'POST',
+  headers: {'Content-Type': 'application/json'},
+  body: JSON.stringify({
+    chat_id: "344059739",  // Здесь указывается chat_id
+    text: "Текст сообщения",
+    parse_mode: 'HTML'
+  })
+});
+  
+  const form = e.target;
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const submitText = document.getElementById('submit-text');
+  const submitSpinner = document.getElementById('submit-spinner');
+  const formMessage = document.getElementById('form-message');
+  
+  // Показываем индикатор загрузки
+  submitText.style.display = 'none';
+  submitSpinner.style.display = 'inline';
+  submitBtn.disabled = true;
+  formMessage.textContent = '';
+  formMessage.style.display = 'none';
+
+  try {
+    // Формируем текст сообщения
+    const formData = new FormData(form);
+    let messageText = '📌 <b>Новая заявка на тур</b>\n\n';
+    
+    for (let [key, value] of formData.entries()) {
+      if (key === 'chat_id') continue;
+      if (!value) continue;
+      
+      messageText += `🔹 <b>${key}:</b> ${value}\n`;
+    }
+
+    // Отправляем в Telegram
+    const response = await fetch(`https://api.telegram.org/botВАШ_BOT_TOKEN/sendMessage`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        chat_id: formData.get('chat_id'),
+        text: messageText,
+        parse_mode: 'HTML'
+      })
+    });
+
+    const data = await response.json();
+
+    if (data.ok) {
+      formMessage.textContent = '✅ Заявка отправлена! Мы свяжемся с вами в ближайшее время.';
+      formMessage.style.color = 'green';
+      form.reset();
+    } else {
+      throw new Error(data.description || 'Ошибка отправки');
+    }
+  } catch (error) {
+    formMessage.textContent = '❌ Ошибка отправки. Пожалуйста, свяжитесь с нами через Telegram или по телефону.';
+    formMessage.style.color = 'red';
+    console.error('Ошибка:', error);
+  } finally {
+    formMessage.style.display = 'block';
+    submitText.style.display = 'inline';
+    submitSpinner.style.display = 'none';
+    submitBtn.disabled = false;
+  }
+});

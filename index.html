@@ -447,41 +447,53 @@
 <section class="booking-form">
   <div class="container">
     <h2 class="section-title">Оставьте заявку</h2>
-    <p class="section-subtitle">Заполните поля и мы свяжемся с вами для оформления и оплаты</p>
+    <p class="section-subtitle">Заполните поля и мы свяжемся с вами</p>
 
-<form id="tourBookingForm" class="booking-form__content" method="POST" action="https://formspree.io/f/xbloezrj">
-  <div class="form-group">
-    <label for="name">Ваше имя</label>
-    <input type="text" id="name" name="name" placeholder="Укажите имя"> <!-- Убрано required -->
-  </div>
+    <form id="telegramForm" class="booking-form__content">
+      <input type="hidden" name="chat_id" value="ВАШ_CHAT_ID">
+      
+      <div class="form-group">
+        <label for="name">Ваше имя*</label>
+        <input type="text" id="name" name="name" placeholder="Иван Иванов" required>
+      </div>
 
-  <div class="form-group">
-    <label for="guests">Количество гостей</label>
-    <input type="number" id="guests" name="guests" placeholder="Сколько гостей поедет с вами?" min="1"> <!-- Убрано required -->
-  </div>
+      <div class="form-group">
+        <label for="phone">Телефон*</label>
+        <input type="tel" id="phone" name="phone" placeholder="+79991234567" required>
+      </div>
 
-  <div class="form-group">
-    <label for="date">Дата тура</label>
-    <input type="date" id="date" name="date" placeholder="Укажите желаемую дату"> <!-- Убрано required -->
-  </div>
+      <div class="form-group">
+        <label for="tour">Выбранный тур</label>
+        <select id="tour" name="tour" class="form-control">
+          <option value="">Не выбрано</option>
+          <option value="Знакомство с Дагестаном">Знакомство с Дагестаном</option>
+          <option value="Древний Дербент">Древний Дербент</option>
+          <!-- другие варианты -->
+        </select>
+      </div>
 
-  <div class="form-group">
-    <label for="tour">Выбранный тур</label>
-    <input type="text" id="tour" name="tour" placeholder="Введите название из каталога"> <!-- Убрано required -->
-  </div>
+      <div class="form-group">
+        <label for="people">Количество человек</label>
+        <input type="number" id="people" name="people" min="1" value="1">
+      </div>
 
-  <div class="form-group">
-    <label for="phone">Телефон</label>
-    <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required> <!-- Оставлено required -->
-  </div>
+      <div class="form-group">
+        <label for="date">Желаемая дата</label>
+        <input type="date" id="date" name="date">
+      </div>
 
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" placeholder="Ваш email для связи"> <!-- Убрано required -->
-  </div>
+      <div class="form-group">
+        <label for="message">Комментарий</label>
+        <textarea id="message" name="message" rows="3"></textarea>
+      </div>
 
-  <button type="submit" class="submit-btn">Отправить заявку</button>
-</form>
+      <div id="form-message"></div>
+
+      <button type="submit" class="submit-btn">
+        <span id="submit-text">Отправить заявку</span>
+        <span id="submit-spinner" style="display:none;">⌛</span>
+      </button>
+    </form>
   </div>
 </section>
 
