@@ -215,7 +215,6 @@ body {
     transform: translateY(-3px);
     text-shadow: 0 0 10px rgba(230, 126, 34, 0.3);
 }
-
 .cta-button:hover::after {
     background: linear-gradient(135deg, #F5DEB3 0%, #E67E22 50%, #FFA500 100%);
     opacity: 0.9;
@@ -694,7 +693,7 @@ body {
     }
 }
 
-/* Адаптивность */
+/* Адаптивность 768!!!!*/
 @media (max-width: 768px) {
     .catalog-item,
     .catalog-item.reverse {
@@ -703,6 +702,24 @@ body {
     
     .catalog-image img {
         min-height: 200px;
+    }
+
+    .hero h1 {
+        font-family: 'Equilibrist', serif;
+        font-size: 2rem;
+        line-height: 1.3;
+        margin-top: 10px;
+             /* Отключаем градиент и задаём однотонный цвет */
+    background: none;
+    -webkit-text-fill-color: #ffd904; /* ЦВЕТ НА МОБИЛКАХ Золотой (#FFD904) */
+    color: #ffd904; /* Фолбэк */
+    font-size: 2rem;
+    text-shadow: 
+      0 0 2px rgba(245, 222, 179, 1),  /* Уменьшенное свечение */
+      0 0 4px rgba(255, 215, 0, 0.6);     /* Более тонкое золотое свечение */
+    
+    /* Упрощенная анимация для мобильных */
+    animation: mobile-glow 3s ease-in-out infinite alternate;
     }
 }
 
