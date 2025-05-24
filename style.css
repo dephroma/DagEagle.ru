@@ -984,7 +984,21 @@ body {
     box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
-
+/* Адаптивность */
+@media (max-width: 768px) {
+    .parallax-content h2 {
+        font-size: 32px;
+    }
+    
+    .discount-text {
+        font-size: 20px;
+    }
+    
+    .discount-btn {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+}
 
 
 
