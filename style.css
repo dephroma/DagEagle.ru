@@ -100,6 +100,10 @@ body {
 /* Адаптация для мобильных */
 @media (max-width: 768px) {
   .hero h1 {
+        /* Отключаем градиент и задаём однотонный цвет */
+    background: none;
+    -webkit-text-fill-color: #ffd904; /* Золотой (#FFD904) */
+    color: #ffd904; /* Фолбэк */
     font-size: 2rem;
     text-shadow: 
       0 0 2px rgba(245, 222, 179, 0.6),  /* Уменьшенное свечение */
