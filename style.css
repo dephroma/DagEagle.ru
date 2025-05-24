@@ -1159,7 +1159,12 @@ body {
   text-align: left; /* Текст отзыва выравниваем по левому краю */
 }
 
+
+
+
 /* Остальные стили остаются без изменений */
+
+
 
 .booking-form {
   padding: 60px 0;
@@ -1187,34 +1192,51 @@ body {
   color: #333;
 }
 
-/* Общие стили для всех полей ввода */
+
+
+
+/* Общие стили для всех полей формы */
 .form-group input,
-.form-group select {
+.form-group select,
+.form-group textarea {
   width: 100%;
-  padding: 15px; /* Такой же отступ, как у других полей */
+  padding: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 16px;
   font-family: 'Montserrat', sans-serif;
   background-color: white;
-  box-sizing: border-box; /* Важно для правильного расчета ширины */
-  height: 50px; /* Фиксированная высота как у других полей */
+  box-sizing: border-box;
+  margin: 5px 0;
 }
 
-/* Специфичные стили для select */
+/* Специальные стили для select */
 .form-group select {
-  appearance: none; /* Убираем стандартный вид */
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  appearance: none;
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right 15px center;
   background-size: 15px;
-  padding-right: 40px; /* Чтобы стрелка не наезжала на текст */
+  padding-right: 40px;
+  height: 50px;
+}
+
+/* Стили для textarea (комментарий) */
+.form-group textarea {
+  min-height: 50px; /* Начальная высота как у других полей */
+  resize: vertical; /* Разрешаем изменять высоту только вертикально */
+  line-height: 1.5;
+}
+
+/* Стили для поля даты */
+.form-group input[type="date"] {
+  height: 50px;
 }
 
 /* Стили для фокуса */
-.form-group select:focus {
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
   outline: none;
   border-color: #4a76a8;
   box-shadow: 0 0 0 2px rgba(74, 118, 168, 0.2);
@@ -1256,12 +1278,21 @@ body {
     padding: 20px;
   }
 
-  /* .form-group input,
-  .form-group select {
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
     padding: 12px;
-    height: 45px;
     font-size: 15px;
-  } */
+  }
+  
+  .form-group select,
+  .form-group input[type="date"] {
+    height: 45px;
+  }
+  
+  .form-group textarea {
+    min-height: 45px;
+  }
 }
 
 
