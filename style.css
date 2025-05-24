@@ -65,6 +65,7 @@ body {
   letter-spacing: 1px;
   line-height: 1.2;
   
+  
   /* Градиент от песочного (#F5DEB3) к золотому (#FFD700) */
   background: linear-gradient(135deg, #ffc82f 0%, #f8c452f1 100%);
   -webkit-background-clip: text;
@@ -246,7 +247,6 @@ body {
 }
 
 .hero .description p {
-        text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
     animation: fadeInUp 1s ease-out 0.6s both;
 }
 
