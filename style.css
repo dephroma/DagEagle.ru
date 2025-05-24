@@ -102,7 +102,7 @@ body {
   .hero h1 {
         /* Отключаем градиент и задаём однотонный цвет */
     background: none;
-    -webkit-text-fill-color: #ffd904; /* Золотой (#FFD904) */
+    -webkit-text-fill-color: #ffd904; /* ЦВЕТ НА МОБИЛКАХ Золотой (#FFD904) */
     color: #ffd904; /* Фолбэк */
     font-size: 2rem;
     text-shadow: 
