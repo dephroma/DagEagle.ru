@@ -436,13 +436,6 @@ body {
     background-color: #f9f9f9;
 }
 
-.section-title {
-    text-align: center;
-    margin-bottom: 50px;
-    font-size: 32px;
-    color: #d8d8d8;
-}
-
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -493,7 +486,14 @@ body {
     text-align: center;
     margin-bottom: 60px;
     font-size: 36px;
-    color: #50422c;
+    color: #6b3939;
+}
+
+.section-title2 {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 36px;
+    color: #f0f0f0;
 }
 
 .catalog-item {
@@ -999,13 +999,20 @@ body {
   text-align: center;
   font-size: 32px;
   margin-bottom: 10px;
-  color: #333;
+  color: #241d12;
 }
 
 .section-subtitle {
   text-align: center;
   font-size: 18px;
-  color: #b6b6b6;
+  color: #1f1f1f;
+  margin-bottom: 40px;
+}
+
+.section-subtitle2 {
+  text-align: center;
+  font-size: 18px;
+  color: #d1d1d1;
   margin-bottom: 40px;
 }
 
