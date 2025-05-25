@@ -458,7 +458,7 @@ body {
     height: 60px;
     width: auto;
     z-index: 110; /* Логотип поверх навигации */
-    margin-right: 30px;
+    margin-right: 12px;
     flex-shrink: 0; /* Запрещаем сжатие */
         transition: transform 0.3s ease; /* Плавное увеличение при наведении */
 }
@@ -479,7 +479,7 @@ body {
     justify-content: flex-end;
     position: relative;
     z-index: 100;
-    padding-left: 8px; /* Отступ от лого */
+    padding-left: 2px; /* Отступ от лого */
 }
 
 /* Основные стили навигации */
@@ -696,7 +696,7 @@ body {
         -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
 
         gap: 8px; /* Отступ между ссылками */
-        padding-left: 8px; /* Отступ слева для логотипа/других элементов */
+        padding-left: 2px; /* Отступ слева для логотипа/других элементов */
     }
     .nav-link {
         font-size: 19px;
@@ -711,7 +711,7 @@ body {
     @media (max-width: 480px) {
         .nav-links {
             gap: 4px;    /* ← Это отступ между flex-элементами */
-            padding-left: 8px;
+            padding-left: 2px;
         }
         .nav-link {
             font-size: 14px;
