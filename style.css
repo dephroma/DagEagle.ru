@@ -672,12 +672,12 @@ body {
         overflow-x: auto; /* Горизонтальная прокрутка, если не помещается */
         -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
 
-        gap: 18px; /* Отступ между ссылками */
-        padding-left: 18px; /* Отступ слева для логотипа/других элементов */
+        gap: 8px; /* Отступ между ссылками */
+        padding-left: 8px; /* Отступ слева для логотипа/других элементов */
     }
     .nav-link {
         font-size: 19px;
-        padding: 8px 12px;
+        padding: 2px 2px;
         background: linear-gradient(135deg, #F5DEB3 0%, #FFD700 100%);
         -webkit-background-clip: text;
         background-clip: text;
