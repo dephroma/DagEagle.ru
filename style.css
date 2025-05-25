@@ -667,7 +667,7 @@ body {
         justify-content: flex-end; /* Прижимаем к правому краю */
         align-items: center;
         width: 100%;
-        gap: 8px; /* Отступ между ссылками */
+        gap: 4px; /* Отступ между ссылками */
         padding-left: 8px; /* Отступ слева для логотипа/других элементов */
         overflow-x: auto; /* Горизонтальная прокрутка, если не помещается */
         -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
@@ -684,8 +684,8 @@ body {
     /* Для мобильных экранов */
     @media (max-width: 480px) {
         .nav-links {
-            gap: 3px;    /* ← Это отступ между flex-элементами */
-            padding-left: 8px;
+            gap: 6px;    /* ← Это отступ между flex-элементами */
+            padding-left: 6px;
         }
         .nav-link {
             font-size: 14px;
