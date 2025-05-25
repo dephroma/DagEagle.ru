@@ -55,6 +55,7 @@ body {
 
 /* Герой-секция */
 .hero {
+      text-align: center; /* Центрируем кнопку */
     font-family: "Jolly";
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/background.jpeg');
     background-size: cover;
@@ -183,7 +184,8 @@ body {
 /* Кнопки */
 
 
-.cta-button {
+.cta-button{
+    font-family: 'Montserrat', serif;
       margin-top: 300px; /* Добавляем отступ сверху */
     margin-bottom: 20px;
   position: relative;
@@ -221,7 +223,7 @@ body {
     background: rgba(0, 0, 0, 0.6); /* Полупрозрачный черный */
     backdrop-filter: blur(8px); /* Эффект размытия */
     -webkit-backdrop-filter: blur(8px);
-    border-radius: 4px;
+    border-radius: 10px;
     z-index: -1;
     border: 1px solid rgba(255, 255, 255, 0.1); /* Тонкая светлая рамка */
     transition: all 0.4s ease;
@@ -236,7 +238,7 @@ body {
     right: -2px;
     bottom: -2px;
     background: linear-gradient(135deg, #F5DEB3 0%, #FFD700 100%);
-    border-radius: 5px;
+    border-radius: 12px;
     z-index: -2;
     opacity: 0.7;
     transition: all 0.4s ease;
@@ -299,6 +301,119 @@ body {
 .hero .cta-button {
     animation: fadeInUp 1s ease-out 1.4s both;
 }
+
+
+
+/* КНОПКА БРОНИРОВАТЬ */
+.book-btn {
+    /* Основные исправления */
+    display: inline-block;  /* Важно! */
+    width: auto;           /* Важно! */
+    padding: 15px 50px;      /* Как вы указали */
+    
+    /* Остальные стили */
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    background: linear-gradient(135deg, #FFD700 0%, #F5DEB3 100%);
+    color: #4e4e4e;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 18px;
+    letter-spacing: 0.5px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1;
+    box-shadow: 
+        0 0 10px rgba(255, 196, 0, 0.603),
+        0 0 20px rgba(255, 215, 0, 0.3);
+    text-shadow: 
+        0 0 1px rgb(255, 232, 100), /* Контур */
+        0 0 2px rgba(255, 244, 145, 0.849);
+    white-space: nowrap; /* Запрещаем перенос текста */
+    margin: 0 auto; /* Автоматические отступы по бокам */
+
+
+}
+
+/* Для flex-контейнера (если используется) */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем по горизонтали */
+}
+
+/* Добавляем рамку из полупрозрачного темного стекла */
+.book-btn::before {
+    content: '';
+    position: absolute;
+    top: 3px; /* Отступ от края кнопки */
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border-radius: 15px; /* На 3px меньше, чем у основной кнопки */
+    background: rgba(20, 20, 20, 0.25); /* Полупрозрачный темный цвет */
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Тонкая светлая граница */
+    z-index: -1;
+    pointer-events: none; /* Чтобы не мешала кликам */
+}
+
+/* Эффекты при наведении курсора на кнопку */
+.book-btn:hover {
+    /* Сдвигаем кнопку вверх на 3px для эффекта "поднятия" */
+    transform: translateY(-3px);
+    
+    /* Три слоя свечения разной интенсивности и размера */
+    box-shadow: 
+        0 0 15px rgba(255, 215, 0, 0.8),       /* Внутренний слой - самое яркое свечение */
+        0 0 30px rgba(255, 215, 0, 0.5),       /* Средний слой - средняя интенсивность */
+        0 0 45px rgba(255, 215, 0, 0.2);       /* Внешний слой - самое рассеянное свечение */
+    
+    /* Запускаем анимацию пульсации */
+    animation: pulse 1.5s infinite alternate;
+}
+
+/* Стили для псевдоэлемента ::before при наведении */
+.book-btn:hover::before {
+    /* Затемняем стеклянную подложку */
+    background: rgba(20, 20, 20, 0.10);
+    
+    /* Делаем границу немного светлее */
+    border-color: rgba(255, 255, 255, 0.13);
+}
+
+/* Эффекты при нажатии на кнопку */
+.book-btn:active {
+    /* Сдвигаем кнопку вниз на 1px для эффекта нажатия */
+    transform: translateY(1px);
+    
+    /* Уменьшаем свечение при нажатии */
+    box-shadow: 
+        0 0 5px rgba(255, 215, 0, 0.8),       /* Ближнее свечение */
+        0 0 10px rgba(255, 215, 0, 0.5);      /* Дальнее свечение */
+}
+
+/* Анимация пульсации свечения */
+@keyframes pulse {
+    /* Начальное состояние анимации */
+    0% {
+        box-shadow: 
+            0 0 15px rgba(255, 215, 0, 0.8),  /* Яркое свечение */
+            0 0 30px rgba(255, 215, 0, 0.5);  /* Рассеянное свечение */
+    }
+    
+    /* Конечное состояние анимации */
+    100% {
+        box-shadow: 
+            0 0 20px rgba(255, 215, 0, 1),    /* Усиленное яркое свечение */
+            0 0 40px rgba(255, 215, 0, 0.7),  /* Усиленное среднее свечение */
+            0 0 60px rgba(255, 215, 0, 0.3);  /* Усиленное рассеянное свечение */
+    }
+}
+
 
 
 
@@ -382,6 +497,11 @@ body {
     font-weight: 600;
     color: #333;
 }
+
+
+
+
+
 
 
 
@@ -630,7 +750,7 @@ body {
 .catalog-content h3 {
     font-size: 24px;
     margin-bottom: 15px;
-    color: #f0ca90;
+    color: #ffe986;
 }
 
 .catalog-content p {
@@ -652,45 +772,12 @@ body {
 .duration {
     margin: 15px 0;
     font-weight: bold;
-    color: #94d4ff;
+    color: #71c6ff;
 }
 
 
  /*  КНОПКА Забронировать */
 
-.book-btn {
-    display: block;
-    margin: 0 auto;
-    align-self: flex-start;
-    padding: 12px 25px;
-    background: linear-gradient(135deg, #fc9566 0%, #df432e 100%);
-    color: #fff;
-    border: 1px solid #e4dbbe; /* песочно-золотая рамка */
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 22px;
-    font-family: 'Montserrat', sans-serif;
-    transition: background 0.4s ease, transform 0.2s ease, border-color 0.3s ease;
-    user-select: none;
-    outline: none;
-    box-shadow: 0 4px 8px rgba(223, 67, 46, 0.4);
-    background-clip: padding-box; /* чтобы рамка не накладывалась на градиент */
-}
-
-.book-btn:hover {
-    background: linear-gradient(135deg, #df432e 0%, #b33127 100%);
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(223, 67, 46, 0.6);
-    border-color: #f7d66a; /* светлее золотой при ховере */
-}
-
-.book-btn:active {
-    transform: scale(0.95);
-    box-shadow: 0 2px 5px rgba(176, 43, 34, 0.7);
-    transition: transform 0.1s ease;
-    border-color: #c79c29; /* чуть темнее при клике */
-}
 
 
 
@@ -863,43 +950,15 @@ body {
     }
     
     .cta-button {
-        margin-top: 300px; /* Добавляем отступ сверху */
+        margin-top: 30px; /* Добавляем отступ сверху */
         padding: 10px 20px;
         font-size: 0.9rem;
     }
+
+    
 }
 
 
-/* Для ландшафтной ориентации на мобильных */
-@media (max-height: 500px) and (orientation: landscape) {
-    .hero {
-        padding-top: 10vh;
-        min-height: 100vh;
-        height: auto;
-    }
-    
-    .hero h1 {
-        font-family: 'Equilibrist', serif;
-        font-size: 1.4rem;
-        margin-bottom: 5px;
-    }
-    
-    .hero .subtitle {
-        font-size: 0.8rem;
-        margin-bottom: 10px;
-    }
-    
-    .hero .description p {
-        font-size: 0.8rem;
-        margin-bottom: 8px;
-    }
-    
-    .cta-button {
-        padding: 8px 16px;
-        font-size: 0.8rem;
-        margin-bottom: 10px;
-    }
-}
 
 /* Адаптация body padding под навигацию */
 
