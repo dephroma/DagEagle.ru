@@ -91,21 +91,21 @@ body {
     0 0 20px rgba(255, 217, 0, 0.863); /* Золотое свечение */
   
   /* Анимация мерцания */
-  animation: glow 3s ease-in-out infinite alternate;
+  animation: glow 2s ease-in-out infinite alternate;
 }
 
 /* Анимация свечения */
 @keyframes glow {
   from {
     text-shadow: 
-      0 0 5px rgba(245, 222, 179, 0.7),
+      0 0 6px rgba(245, 222, 179, 0.7),
       0 0 10px rgba(255, 215, 0, 0.5);
   }
   to {
     text-shadow: 
-      0 0 12px rgba(245, 222, 179, 0.9),
-      0 0 15px rgba(255, 215, 0, 0.7),
-      0 0 25px rgba(255, 215, 0, 0.4);
+      0 0 11px rgba(245, 222, 179, 0.9),
+      0 0 13px rgba(255, 215, 0, 0.7),
+      0 0 28px rgba(255, 215, 0, 0.4);
   }
 } 
 
@@ -119,8 +119,8 @@ body {
     color: #ffd904; /* Фолбэк */
     font-size: 2rem;
     text-shadow: 
-      0 0 2px rgba(245, 222, 179, 0.6),  /* Уменьшенное свечение */
-      0 0 4px rgba(255, 215, 0, 0.4);     /* Более тонкое золотое свечение */
+      0 0 4px rgba(245, 222, 179, 0.6),  /* Уменьшенное свечение */
+      0 0 7px rgba(255, 215, 0, 0.4);     /* Более тонкое золотое свечение */
     
     /* Упрощенная анимация для мобильных */
     animation: mobile-glow 3s ease-in-out infinite alternate;
