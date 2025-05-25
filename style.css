@@ -35,6 +35,15 @@ body {
     font-display: swap; /* Оптимизация загрузки */
 }
 
+@font-face {
+  font-family: 'Jolly';  /* Название, которое будете использовать */
+  src: 
+    url('../fonts/Jolly.ttf') format('truetype');
+  font-weight: normal; 
+  font-style: normal;
+  font-display: swap;  /* Чтобы текст не "прыгал" при загрузке */
+}
+
 .container {
     width: 100%;
     max-width: 1200px;
@@ -46,6 +55,7 @@ body {
 
 /* Герой-секция */
 .hero {
+    font-family: "Jolly";
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/background.jpeg');
     background-size: cover;
     background-position: center;
@@ -55,6 +65,7 @@ body {
     justify-content: center; /* Центрирование по горизонтали */
     color: rgb(255, 255, 255);
     text-align: center;
+      font-size: 1.2rem;
 }
 
 
