@@ -461,10 +461,10 @@ body {
 /* Основные стили навигации */
 .nav-link {
     font-family: 'Equilibrist', sans-serif;
-    font-size: 25px; /* Увеличили размер шрифта */
+    font-size: 23px; /* Увеличили размер шрифта */
     font-weight: 500; /* Средняя насыщенность */
     text-decoration: none !important;
-    padding: 0 25px; /* Увеличили отступы между пунктами */
+    padding: 0 20px; /* Увеличили отступы между пунктами */
     transition: all 0.4s ease;
     position: relative;
 }
@@ -673,7 +673,7 @@ body {
         -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
     }
     .nav-link {
-        font-size: 22px;
+        font-size: 19px;
         padding: 8px 12px;
         background: linear-gradient(135deg, #F5DEB3 0%, #FFD700 100%);
         -webkit-background-clip: text;
@@ -688,7 +688,7 @@ body {
             padding-left: 10px;
         }
         .nav-link {
-            font-size: 12px;
+            font-size: 14px;
         }
     }
 }
