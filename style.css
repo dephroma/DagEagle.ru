@@ -722,7 +722,7 @@ body {
     /* Для мобильных экранов */
     @media (max-width: 480px) {
         .nav-links {
-            gap: 4px;    /* ← Это отступ между flex-элементами */
+            gap: 5px;    /* ← Это отступ между flex-элементами */
             padding-left: 2px;
         }
         .nav-link {
