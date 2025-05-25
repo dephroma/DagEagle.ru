@@ -465,7 +465,7 @@ body {
     font-size: 23px; /* Увеличили размер шрифта */
     font-weight: 500; /* Средняя насыщенность */
     text-decoration: none !important;
-    padding: 0 10px; /* Увеличили отступы между пунктами */
+    padding: 0 20px; /* Увеличили отступы между пунктами */
     transition: all 0.4s ease;
     position: relative;
 }
@@ -669,10 +669,11 @@ body {
         justify-content: flex-end; /* Прижимаем к правому краю */
         align-items: center;
         width: 100%;
-        gap: 8px; /* Отступ между ссылками */
-        padding-left: 8px; /* Отступ слева для логотипа/других элементов */
         overflow-x: auto; /* Горизонтальная прокрутка, если не помещается */
         -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
+
+        gap: 18px; /* Отступ между ссылками */
+        padding-left: 18px; /* Отступ слева для логотипа/других элементов */
     }
     .nav-link {
         font-size: 19px;
