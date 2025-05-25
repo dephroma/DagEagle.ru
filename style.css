@@ -315,7 +315,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     position: relative;
     background: linear-gradient(135deg, #FFD700 0%, #F5DEB3 100%);
-    color: #4e4e4e;
+    color: #ffffff;
     border: none;
     font-size: 1.2rem;
     font-weight: 700;
@@ -329,8 +329,8 @@ body {
         0 0 10px rgba(255, 196, 0, 0.603),
         0 0 20px rgba(255, 215, 0, 0.3);
     text-shadow: 
-        0 0 1px rgb(255, 232, 100), /* Контур */
-        0 0 2px rgba(255, 244, 145, 0.849);
+        0 0 1px rgba(0, 0, 0, 0.267), /* Контур */
+        0 0 2px rgba(0, 0, 0, 0.233);
     white-space: nowrap; /* Запрещаем перенос текста */
     margin: 0 auto; /* Автоматические отступы по бокам */
 
@@ -353,7 +353,7 @@ body {
     right: 3px;
     bottom: 3px;
     border-radius: 15px; /* На 3px меньше, чем у основной кнопки */
-    background: rgba(20, 20, 20, 0.25); /* Полупрозрачный темный цвет */
+    background: rgba(20, 20, 20, 0.363); /* Полупрозрачный темный цвет */
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
     border: 1px solid rgba(255, 255, 255, 0.1); /* Тонкая светлая граница */
