@@ -473,7 +473,7 @@ body {
 /* Анимация для всех устройств */
 .logo.active {
     transform: scale(1.1);
-    transition: transform 0.15s ease-out;
+    transition: transform 0.6s ease-out;
 }
 
 /* Стиль для ссылки */
