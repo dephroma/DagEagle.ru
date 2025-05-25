@@ -483,6 +483,31 @@ body {
     text-decoration: none;/* Убирает подчеркивание*/
 }
 
+/* Десктоп-версия (только для устройств с hover) */
+@media (hover: hover) {
+    .logo:hover {
+        transform: scale(1.2);
+    }
+}
+
+/* Мобильная версия (тач-устройства) */
+@media (hover: none) {
+    .logo {
+        transition: none; /* Отключаем анимацию */
+    }
+    
+    .logo:active {
+        transform: scale(1.1); /* [1] */
+        transition: transform 0.1s ease; /* [2] */
+    }
+}
+
+.logo-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+
 
 .nav-links {
             align-items: center; /* Вертикальное центрирование */
