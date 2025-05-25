@@ -456,7 +456,7 @@ body {
     justify-content: flex-end;
     position: relative;
     z-index: 100;
-    padding-left: 10px; /* Отступ от лого */
+    padding-left: 8px; /* Отступ от лого */
 }
 
 /* Основные стили навигации */
@@ -465,7 +465,7 @@ body {
     font-size: 23px; /* Увеличили размер шрифта */
     font-weight: 500; /* Средняя насыщенность */
     text-decoration: none !important;
-    padding: 0 20px; /* Увеличили отступы между пунктами */
+    padding: 0 10px; /* Увеличили отступы между пунктами */
     transition: all 0.4s ease;
     position: relative;
 }
