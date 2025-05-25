@@ -426,7 +426,7 @@ body {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 25px;
         position: relative;
     z-index: 100;
 }
@@ -684,8 +684,8 @@ body {
     /* Для мобильных экранов */
     @media (max-width: 480px) {
         .nav-links {
-            gap: 6px;    /* ← Это отступ между flex-элементами */
-            padding-left: 6px;
+            gap: 4px;    /* ← Это отступ между flex-элементами */
+            padding-left: 8px;
         }
         .nav-link {
             font-size: 14px;
