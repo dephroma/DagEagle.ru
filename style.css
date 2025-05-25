@@ -44,6 +44,15 @@ body {
   font-display: swap;  /* Чтобы текст не "прыгал" при загрузке */
 }
 
+@font-face {
+  font-family: 'Rennen';  /* Название, которое будете использовать */
+  src: 
+    url('../fonts/Rennen.ttf') format('truetype');
+  font-weight: normal; 
+  font-style: normal;
+  font-display: swap;  /* Чтобы текст не "прыгал" при загрузке */
+}
+
 .container {
     width: 100%;
     max-width: 1200px;
@@ -56,7 +65,7 @@ body {
 /* Герой-секция */
 .hero {
       text-align: center; /* Центрируем кнопку */
-    font-family: "Jolly";
+    font-family: "Rennen";
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/background.jpeg');
     background-size: cover;
     background-position: center;
@@ -306,15 +315,13 @@ body {
 
 /* КНОПКА БРОНИРОВАТЬ */
 .book-btn {
-    /* Основные исправления */
-    display: inline-block;  /* Важно! */
-    width: auto;           /* Важно! */
-    padding: 15px 50px;      /* Как вы указали */
-    
-    /* Остальные стили */
+    /* Основные стили */
+    display: inline-block;
+    width: auto;
+    padding: 15px 50px;
     font-family: 'Montserrat', sans-serif;
     position: relative;
-    background: linear-gradient(135deg, #FFD700 0%, #F5DEB3 100%);
+    background: linear-gradient(135deg, #ffde24 0%, #F5DEB3 100%);
     color: #ffffff;
     border: none;
     font-size: 1.2rem;
@@ -325,92 +332,85 @@ body {
     overflow: hidden;
     transition: all 0.3s ease;
     z-index: 1;
+    
+    /* Свечение по умолчанию */
     box-shadow: 
-        0 0 10px rgba(255, 196, 0, 0.603),
-        0 0 20px rgba(255, 215, 0, 0.3);
+        0 0 15px rgba(255, 215, 0, 0.8),
+        0 0 30px rgba(255, 215, 0, 0.5);
     text-shadow: 
-        0 0 1px rgba(0, 0, 0, 0.267), /* Контур */
+        0 0 1px rgba(0, 0, 0, 0.267),
         0 0 2px rgba(0, 0, 0, 0.233);
-    white-space: nowrap; /* Запрещаем перенос текста */
-    margin: 0 auto; /* Автоматические отступы по бокам */
-
-
-}
-
-/* Для flex-контейнера (если используется) */
-.hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Центрируем по горизонтали */
-}
-
-/* Добавляем рамку из полупрозрачного темного стекла */
-.book-btn::before {
-    content: '';
-    position: absolute;
-    top: 3px; /* Отступ от края кнопки */
-    left: 3px;
-    right: 3px;
-    bottom: 3px;
-    border-radius: 15px; /* На 3px меньше, чем у основной кнопки */
-    background: rgba(61, 61, 61, 0.363); /* Полупрозрачный темный цвет */
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Тонкая светлая граница */
-    z-index: -1;
-    pointer-events: none; /* Чтобы не мешала кликам */
-}
-
-/* Эффекты при наведении курсора на кнопку */
-.book-btn:hover {
-    /* Сдвигаем кнопку вверх на 3px для эффекта "поднятия" */
-    transform: translateY(-3px);
+    white-space: nowrap;
+    margin: 0 auto;
     
-    /* Три слоя свечения разной интенсивности и размера */
-    box-shadow: 
-        0 0 15px rgba(255, 215, 0, 0.8),       /* Внутренний слой - самое яркое свечение */
-        0 0 30px rgba(255, 215, 0, 0.5),       /* Средний слой - средняя интенсивность */
-        0 0 45px rgba(255, 215, 0, 0.2);       /* Внешний слой - самое рассеянное свечение */
-    
-    /* Запускаем анимацию пульсации */
+    /* Анимация пульсации всегда активна */
     animation: pulse 1.5s infinite alternate;
 }
 
-/* Стили для псевдоэлемента ::before при наведении */
-.book-btn:hover::before {
-    /* Затемняем стеклянную подложку */
-    background: rgba(20, 20, 20, 0.10);
-    
-    /* Делаем границу немного светлее */
-    border-color: rgba(255, 255, 255, 0.13);
+/* Стеклянная подложка */
+.book-btn::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border-radius: 15px;
+    background: rgba(43, 43, 43, 0.247); /* Темнее по умолчанию */
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: -1;
+    pointer-events: none;
+    transition: all 0.3s ease;
 }
 
-/* Эффекты при нажатии на кнопку */
+/* Состояние при наведении - затемнение */
+.book-btn:hover {
+    transform: translateY(-3px);
+    
+    /* Уменьшаем свечение */
+    box-shadow: 
+        0 0 8px rgba(255, 215, 0, 0.6),
+        0 0 15px rgba(255, 215, 0, 0.3);
+    
+    /* Отключаем пульсацию при наведении */
+    animation: none;
+}
+
+/* Затемняем подложку еще сильнее при наведении */
+.book-btn:hover::before {
+    background: rgba(54, 54, 54, 0.418);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Состояние при нажатии - яркое свечение */
 .book-btn:active {
-    /* Сдвигаем кнопку вниз на 1px для эффекта нажатия */
     transform: translateY(1px);
     
-    /* Уменьшаем свечение при нажатии */
+    /* Усиливаем свечение */
     box-shadow: 
-        0 0 5px rgba(255, 215, 0, 0.8),       /* Ближнее свечение */
-        0 0 10px rgba(255, 215, 0, 0.5);      /* Дальнее свечение */
+        0 0 20px rgba(255, 215, 0, 1),
+        0 0 40px rgba(255, 215, 0, 0.7);
+    
+    /* Делаем подложку светлее */
+    &::before {
+        background: rgba(0, 0, 0, 0.2);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
 }
 
-/* Анимация пульсации свечения */
+/* Анимация пульсации */
 @keyframes pulse {
-    /* Начальное состояние анимации */
     0% {
         box-shadow: 
-            0 0 15px rgba(255, 215, 0, 0.8),  /* Яркое свечение */
-            0 0 30px rgba(255, 215, 0, 0.5);  /* Рассеянное свечение */
+            0 0 15px rgba(252, 219, 32, 0.8),
+            0 0 30px rgba(255, 215, 0, 0.5);
     }
-    
-    /* Конечное состояние анимации */
     100% {
         box-shadow: 
-            0 0 20px rgba(255, 215, 0, 1),    /* Усиленное яркое свечение */
-            0 0 40px rgba(255, 215, 0, 0.7),  /* Усиленное среднее свечение */
-            0 0 60px rgba(255, 215, 0, 0.3);  /* Усиленное рассеянное свечение */
+            0 0 20px rgba(255, 215, 0, 1),
+            0 0 40px rgba(255, 215, 0, 0.7);
     }
 }
 
@@ -576,7 +576,7 @@ body {
 
 .logo {
     /* Основные параметры */
-    height: 100px;
+    height: 80px;
     width: auto;
     z-index: 110;
     margin-right: 12px;
@@ -1056,7 +1056,7 @@ body {
 .about-header h1 {
     text-align: center;
     font-size: 36px;
-    color: #2c3e50;
+    color: #000000;
     margin-bottom: 50px;
     font-weight: 700;
 }
