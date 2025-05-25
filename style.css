@@ -455,11 +455,9 @@ body {
 }
 
 .logo {
-    /* Основные размеры */
+    /* Основные параметры */
     height: 100px;
     width: auto;
-    
-    /* Позиционирование */
     z-index: 110;
     margin-right: 12px;
     flex-shrink: 0;
@@ -467,17 +465,18 @@ body {
     /* Начальное состояние */
     transform: scale(1);
     
-    /* Анимация только для активного состояния */
-    transition: transform 0.15s ease;
-    -webkit-tap-highlight-color: transparent; /* Убираем подсветку на мобильных */
+    /* Подготовка к анимации */
+    will-change: transform;
+    -webkit-tap-highlight-color: transparent; /* Убирает серую подсветку при тапе */
 }
 
-/* Эффект при нажатии (работает и на мобильных, и на десктопе) */
-.logo:active {
+/* Анимация для всех устройств */
+.logo.active {
     transform: scale(1.1);
+    transition: transform 0.15s ease-out;
 }
 
-/* Стили для ссылки-обертки */
+/* Стиль для ссылки */
 .logo-link {
     display: inline-block;
     text-decoration: none;
