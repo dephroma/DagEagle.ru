@@ -426,7 +426,7 @@ body {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 25px;
+    padding: 0 10px;
         position: relative;
     z-index: 100;
 }
@@ -677,7 +677,7 @@ body {
     }
     .nav-link {
         font-size: 19px;
-        padding: 2px 2px;
+        padding: 4px 4px;
         background: linear-gradient(135deg, #F5DEB3 0%, #FFD700 100%);
         -webkit-background-clip: text;
         background-clip: text;
