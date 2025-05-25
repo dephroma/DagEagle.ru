@@ -667,14 +667,14 @@ body {
         justify-content: flex-end; /* Прижимаем к правому краю */
         align-items: center;
         width: 100%;
-        gap: 4px; /* Отступ между ссылками */
+        gap: 8px; /* Отступ между ссылками */
         padding-left: 8px; /* Отступ слева для логотипа/других элементов */
         overflow-x: auto; /* Горизонтальная прокрутка, если не помещается */
         -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
     }
     .nav-link {
         font-size: 19px;
-        padding: 8px 12px;
+        padding: 8px 8px;
         background: linear-gradient(135deg, #F5DEB3 0%, #FFD700 100%);
         -webkit-background-clip: text;
         background-clip: text;
