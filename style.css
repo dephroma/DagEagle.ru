@@ -674,7 +674,7 @@ body {
     }
     .nav-link {
         font-size: 19px;
-        padding: 8px 8px;
+        padding: 8px 12px;
         background: linear-gradient(135deg, #F5DEB3 0%, #FFD700 100%);
         -webkit-background-clip: text;
         background-clip: text;
@@ -686,6 +686,7 @@ body {
         .nav-links {
             gap: 6px;    /* ← Это отступ между flex-элементами */
             padding-left: 6px;
+                    padding: 4px 4px;
         }
         .nav-link {
             font-size: 14px;
