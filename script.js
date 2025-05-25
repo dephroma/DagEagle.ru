@@ -197,4 +197,6 @@ document.addEventListener('DOMContentLoaded', function() {
   initNavigation();
   initParallax();
   initForms();
+
+  
 });

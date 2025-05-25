@@ -307,7 +307,7 @@ body {
 
 .tour-section {
     padding: 80px 0;
-    background: #f9f9f9;
+    background: #ffffff;
 }
 
 .tour-header {
@@ -531,7 +531,7 @@ body {
 
 .about-company {
     padding: 60px 0;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
 }
 
 .features-grid {
@@ -577,7 +577,7 @@ body {
 
 .catalog-section {
     padding: 80px 0;
-    background-color: #f8f9fa;
+    background-color: #ffffff;
 }
 
 .section-title {
@@ -743,6 +743,75 @@ body {
     }
 }
 
+
+/* Стили для галереи */
+.catalog-gallery {
+    position: relative;
+    flex: 1;
+}
+
+.main-image {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.main-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.main-image img.active {
+    opacity: 1;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+    background: rgba(0,0,0,0.1);
+}
+
+.thumb {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.thumb.active {
+    border-color: #e67e22;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .main-image {
+        height: 200px;
+    }
+    
+    .thumb {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+
 /* Адаптивность 768!!!!*/
 @media (max-width: 768px) {
     .catalog-item,
@@ -843,7 +912,7 @@ body {
 /* Стили для блока Каталог */
 .catalog-section {
     padding: 80px 0;
-    background-color: #f8f9fa;
+    background-color: #ffffff;
 }
 
 .catalog-grid {
@@ -1137,7 +1206,7 @@ body {
 /* Общие стили для секции отзывов */
 .reviews-section {
   padding: 60px 0;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   font-family: 'Arial', sans-serif;
   overflow: hidden;
 }
@@ -1321,7 +1390,7 @@ body {
 
 .booking-form {
   padding: 60px 0;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   font-family: 'Arial', sans-serif;
 }
 
