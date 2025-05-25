@@ -572,6 +572,34 @@
 <!-- ... ваш существующий код каталога ... -->
 </section>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const logo = document.querySelector('.logo');
+    
+    // Для тач-устройств
+    logo.addEventListener('touchstart', function() {
+        this.classList.add('active');
+    });
+    
+    logo.addEventListener('touchend', function() {
+        this.classList.remove('active');
+    });
+    
+    // Для десктопов
+    logo.addEventListener('mousedown', function() {
+        this.classList.add('active');
+    });
+    
+    logo.addEventListener('mouseup', function() {
+        this.classList.remove('active');
+    });
+    
+    logo.addEventListener('mouseleave', function() {
+        this.classList.remove('active');
+    });
+});
+</script>
+
 <script src="script.js"></script>
 </body>
 </html>

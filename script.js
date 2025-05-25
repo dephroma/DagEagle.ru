@@ -185,6 +185,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     }
+
+    
     
     // Удалите дублирующийся обработчик для tourBookingForm
     // или используйте только один из них
