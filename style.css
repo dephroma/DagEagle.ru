@@ -450,6 +450,7 @@ body {
 }
 
 .nav-links {
+            align-items: center; /* Вертикальное центрирование */
     display: flex;
     flex-grow: 1;
     justify-content: flex-end;
@@ -663,6 +664,7 @@ body {
 
 @media (max-width: 768px) {
     .nav-links {
+          align-items: center; /* Вертикальное центрирование */
         display: flex;
         justify-content: flex-end; /* Прижимаем к правому краю */
         align-items: center;
