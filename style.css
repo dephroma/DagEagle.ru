@@ -730,8 +730,8 @@ body {
     color: #ffd904; /* Фолбэк */
     font-size: 2rem;
     text-shadow: 
-      0 0 2px rgba(245, 222, 179, 1),  /* Уменьшенное свечение */
-      0 0 4px rgba(255, 215, 0, 0.6);     /* Более тонкое золотое свечение */
+      0 0 4px rgba(245, 222, 179, 1.4),  /* Уменьшенное свечение */
+      0 0 6px rgba(255, 215, 0, 1);     /* Более тонкое золотое свечение */
     
     /* Упрощенная анимация для мобильных */
     animation: mobile-glow 3s ease-in-out infinite alternate;
@@ -744,6 +744,9 @@ body {
         font-size: 1.6rem;
         line-height: 1.3;
         margin-top: 10px;
+            text-shadow: 
+      0 0 2px rgba(245, 222, 179, 0.2),  /* Уменьшенное свечение */
+      0 0 4px rgba(255, 215, 0, 0.2);     /* Более тонкое золотое свечение */
     }
     
     .hero .subtitle {
