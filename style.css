@@ -455,62 +455,29 @@ body {
 }
 
 .logo {
-    /* 1. Основные размеры */
-    height: 100px;         /* Фиксированная высота логотипа */
-    width: auto;           /* Ширина подстраивается пропорционально */
+    /* Основные размеры */
+    height: 100px;
+    width: auto;
     
-    /* 2. Позиционирование */
-    z-index: 110;          /*[1] Гарантирует, что лого будет поверх других элементов*/
-    margin-right: 12px;    /* Отступ справа от логотипа */
+    /* Позиционирование */
+    z-index: 110;
+    margin-right: 12px;
+    flex-shrink: 0;
     
-    /* 3. Гибкость в flex-контейнере */
-    flex-shrink: 0;        /*[2] Запрещает сжатие логотипа при нехватке места*/
+    /* Начальное состояние */
+    transform: scale(1);
     
-    /* 4. Анимационные свойства */
-    transform: scale(1);   /*[3] Явное указание начального масштаба*/
-    transition: transform 0.3s ease; /*[4] Плавное изменение масштаба*/
-    will-change: transform;/*[5] Оптимизация анимации для браузера*/
+    /* Анимация только для активного состояния */
+    transition: transform 0.15s ease;
+    -webkit-tap-highlight-color: transparent; /* Убираем подсветку на мобильных */
 }
 
-.logo:hover {
-    /* 5. Эффект при наведении */
-    transform: scale(1.2); /*[6] Увеличение на 20% при наведении*/
+/* Эффект при нажатии (работает и на мобильных, и на десктопе) */
+.logo:active {
+    transform: scale(1.1);
 }
 
-.logo-link {
-    /* 6. Стили для ссылки-обертки */
-    display: inline-block; /*[7] Позволяет задать размеры*/
-    text-decoration: none;/* Убирает подчеркивание*/
-}
-
-/* Десктоп-версия (только для устройств с hover) */
-@media (hover: hover) {
-    .logo:hover {
-        transform: scale(1.2);
-    }
-}
-
-/* Для устройств с мышью (десктоп) */
-@media (hover: hover) {
-    .logo {
-        transition: transform 0.3s ease;
-    }
-    .logo:hover {
-        transform: scale(1.2);
-    }
-}
-
-/* Для тач-устройств */
-@media (hover: none) {
-    .logo {
-        -webkit-tap-highlight-color: transparent; /* Убираем подсветку при тапе */
-        transition: transform 0.15s ease;
-    }
-    .logo:active {
-        transform: scale(1.1);
-    }
-}
-
+/* Стили для ссылки-обертки */
 .logo-link {
     display: inline-block;
     text-decoration: none;
