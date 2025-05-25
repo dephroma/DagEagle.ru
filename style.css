@@ -353,7 +353,7 @@ body {
     right: 3px;
     bottom: 3px;
     border-radius: 15px; /* На 3px меньше, чем у основной кнопки */
-    background: rgba(20, 20, 20, 0.363); /* Полупрозрачный темный цвет */
+    background: rgba(61, 61, 61, 0.363); /* Полупрозрачный темный цвет */
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
     border: 1px solid rgba(255, 255, 255, 0.1); /* Тонкая светлая граница */
