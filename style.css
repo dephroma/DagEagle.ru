@@ -686,7 +686,6 @@ body {
         .nav-links {
             gap: 6px;    /* ← Это отступ между flex-элементами */
             padding-left: 6px;
-                    padding: 4px 4px;
         }
         .nav-link {
             font-size: 14px;
