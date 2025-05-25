@@ -490,15 +490,24 @@ body {
     }
 }
 
-/* Мобильная версия (тач-устройства) */
+/* Для устройств с мышью (десктоп) */
+@media (hover: hover) {
+    .logo {
+        transition: transform 0.3s ease;
+    }
+    .logo:hover {
+        transform: scale(1.2);
+    }
+}
+
+/* Для тач-устройств */
 @media (hover: none) {
     .logo {
-        transition: none; /* Отключаем анимацию */
+        -webkit-tap-highlight-color: transparent; /* Убираем подсветку при тапе */
+        transition: transform 0.15s ease;
     }
-    
     .logo:active {
-        transform: scale(1.1); /* [1] */
-        transition: transform 0.1s ease; /* [2] */
+        transform: scale(1.1);
     }
 }
 
