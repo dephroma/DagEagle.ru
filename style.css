@@ -684,8 +684,8 @@ body {
     /* Для мобильных экранов */
     @media (max-width: 480px) {
         .nav-links {
-            gap: 10px;
-            padding-left: 10px;
+            gap: 6px;    /* ← Это отступ между flex-элементами */
+            padding-left: 8px;
         }
         .nav-link {
             font-size: 14px;
