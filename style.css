@@ -762,7 +762,11 @@ body {
 .catalog-content h3 {
     font-size: 24px;
     margin-bottom: 15px;
-    color: #ffe986;
+    background: linear-gradient(135deg, #ffe986 0%, #ffd447 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block; /* Важно для корректного отображения */
 }
 
 .catalog-content p {
