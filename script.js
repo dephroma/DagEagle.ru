@@ -177,7 +177,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Инициализация всех компонентов
   initCarousel();
   initNavigation();
-  initParallax();
   initForms();
 
 
