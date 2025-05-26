@@ -78,7 +78,7 @@ body {
 .hero {
       text-align: center; /* Центрируем кнопку */
     font-family: "Farabee";
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.76)), url('images/background.jpeg');
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.76)), url('images/background.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -1468,7 +1468,7 @@ body {
 
   /* Внешний вид */
   border: 1px solid #ddd; /* Серая граница толщиной 1px */
-  border-radius: 5px;     /* Закругление углов на 5px */
+  border-radius: 7px;     /* Закругление углов на 5px */
   background-color: white; /* Белый фон поля ввода */
 
   /* Текст */
@@ -1534,9 +1534,9 @@ body {
   background: #0077ff;
   color: white;
   border: none;
-  padding: 12px 25px;
+  padding: 12px 55px;
   font-size: 16px;
-  border-radius: 5px;
+  border-radius: 9px;
   cursor: pointer;
   transition: background 0.3s;
   width: 50%;
