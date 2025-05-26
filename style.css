@@ -108,19 +108,19 @@ body {
 @keyframes glow {
   from {
     text-shadow: 
-      0 0 6px rgba(245, 222, 179, 0.7),
-      0 0 10px rgba(255, 215, 0, 0.5);
+      0 0 10px rgba(245, 222, 179, 0.7),
+      0 0 20px rgba(255, 217, 0, 0.5);
   }
   to {
     text-shadow: 
-      0 0 11px rgba(245, 222, 179, 0.9),
-      0 0 13px rgba(255, 215, 0, 0.7),
-      0 0 28px rgba(255, 215, 0, 0.4);
+      0 0 15px rgba(245, 222, 179, 0.9),
+      0 0 30px rgba(255, 217, 0, 0.8),
+      0 0 40px rgba(255, 217, 0, 0.6);
   }
 } 
 
-/* Адаптация для мобильных */
-/* Адаптация для мобильных */
+/* Адаптация для планшета */
+
 @media (max-width: 768px) {
   .hero h1 {
         /* Отключаем градиент и задаём однотонный цвет */
@@ -133,7 +133,7 @@ body {
       0 0 7px rgba(255, 215, 0, 0.4);     /* Более тонкое золотое свечение */
     
     /* Упрощенная анимация для мобильных */
-    animation: mobile-glow 3s ease-in-out infinite alternate;
+    animation: mobile-glow 2s ease-in-out infinite alternate;
   }
   
   /* Упрощенная анимация свечения для мобильных */
@@ -166,6 +166,7 @@ body {
   }
 }
 
+   /* Упрощенная анимация для мобильных */
 @media (max-width: 480px) {
   .hero h1 {
     text-shadow: 
@@ -840,9 +841,6 @@ body {
         font-size: 1.6rem;
         line-height: 1.3;
         margin-top: 10px;
-            text-shadow: 
-      0 0 1px rgba(245, 222, 179, 0.2),  /* Уменьшенное свечение */
-      0 0 2px rgba(255, 215, 0, 0.2);     /* Более тонкое золотое свечение */
     }
     
     .hero .subtitle {
@@ -862,6 +860,9 @@ body {
 
     
 }
+
+
+
 
 
 
