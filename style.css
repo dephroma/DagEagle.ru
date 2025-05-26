@@ -1442,7 +1442,7 @@ body {
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
 .form-group label {
@@ -1456,18 +1456,24 @@ body {
 
 
 /* Общие стили для всех полей формы */
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
-  font-family: 'Montserrat', sans-serif;
-  background-color: white;
-  box-sizing: border-box;
-  margin: 5px 0;
+.form-group input,       /* Стили для текстовых полей ввода */
+.form-group select,      /* Стили для выпадающих списков */
+.form-group textarea {   /* Стили для многострочных текстовых полей */
+  
+  /* Размеры и расположение */
+  width: 50%;           /* Занимает 100% ширины родительского контейнера */
+  padding: 10px;         /* Внутренние отступы по 10px со всех сторон */
+  margin: 5px 0;         /* Внешние отступы: 5px сверху и снизу, 0 по бокам */
+  box-sizing: border-box; /* Учитывает padding и border в общей ширине элемента */
+
+  /* Внешний вид */
+  border: 1px solid #ddd; /* Серая граница толщиной 1px */
+  border-radius: 5px;     /* Закругление углов на 5px */
+  background-color: white; /* Белый фон поля ввода */
+
+  /* Текст */
+  font-size: 16px;        /* Размер шрифта */
+  font-family: 'Montserrat', sans-serif; /* Шрифт Montserrat с запасным sans-serif */
 }
 
 /* Специальные стили для поля даты */
@@ -1533,7 +1539,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s;
-  width: 100%;
+  width: 50%;
 }
 
 .submit-btn:hover {
