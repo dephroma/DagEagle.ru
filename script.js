@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
 
-  // ========== Параллакс ==========
+
 
   // ========== Формы ==========
   const initForms = () => {
