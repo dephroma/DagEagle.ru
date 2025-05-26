@@ -50,6 +50,15 @@ body {
     url('../fonts/Rennen.ttf') format('truetype');
   font-weight: normal; 
   font-style: normal;
+  font-display: swap;  /* Чтобы текст не "прыгал" при загрузке */ 
+}
+
+@font-face {
+  font-family: 'Farabee';  /* Название, которое будете использовать */
+  src: 
+    url('../fonts/Farabee.ttf') format('truetype');
+  font-weight: normal; 
+  font-style: normal;
   font-display: swap;  /* Чтобы текст не "прыгал" при загрузке */
 }
 
@@ -65,7 +74,7 @@ body {
 /* Герой-секция */
 .hero {
       text-align: center; /* Центрируем кнопку */
-    font-family: "Rennen";
+    font-family: "Farabee";
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/background.jpeg');
     background-size: cover;
     background-position: center;
@@ -1758,8 +1767,10 @@ html {
 
 /* Адаптивность */
 @media (max-width: 768px) {
-    .catalog-item {
-        flex-direction: column;
+
+            .catalog-item,
+    .catalog-item.reverse {
+      flex-direction: column;
     }
     
     .catalog-gallery-wrapper,
