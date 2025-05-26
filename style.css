@@ -71,11 +71,14 @@ body {
 
 
 
+
+
+
 /* Герой-секция */
 .hero {
       text-align: center; /* Центрируем кнопку */
     font-family: "Farabee";
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/background.jpeg');
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.76)), url('images/background.jpeg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -143,6 +146,14 @@ body {
     backdrop-filter: blur(3px); /* Меньше размытие для производительности */
     -webkit-backdrop-filter: blur(3px);
   }
+
+  .cta-button, 
+  .cta-button:hover, 
+  .cta-button:focus {
+    text-decoration: none !important;
+    -webkit-text-decoration: none !important;
+  }
+
 }
 
    /* Упрощенная анимация для мобильных */
@@ -161,7 +172,9 @@ body {
 
 
 /* Кнопки */
-
+.no-underline {
+    text-decoration: none !important;
+}
 
 .cta-button {
     /* Шрифт и текст */
@@ -196,7 +209,7 @@ body {
     position: relative; /* Для позиционирования псевдоэлементов */
     z-index: 1; /* Поднимаем над псевдоэлементами */
     overflow: hidden; /* Скрываем выходящие за границы элементы */
-    
+        text-decoration: none;
     /* Анимация */
     transition: all 0.4s ease; /* Плавные переходы для всех свойств */
 }
@@ -644,7 +657,7 @@ body {
 
 .logo {
     /* Основные параметры */
-    height: 80px;
+    height: 70px;
     width: auto;
     z-index: 110;
     margin-right: 12px;
@@ -1163,6 +1176,9 @@ body {
     line-height: 1.6;
     margin-bottom: 40px;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+
+            border-bottom: none !important;
+    text-decoration: none !important;
 }
 
 .code-word {
@@ -1185,9 +1201,13 @@ body {
 }
 
 .discount-btn:hover {
-    background-color: #c0392b;
+    background-color: #a73326;
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.discount-text {
+    text-decoration: none !important;
 }
 
 /* Адаптивность */
@@ -1212,6 +1232,10 @@ body {
         background-repeat: no-repeat; /* Запрет повторения изображения */
         background-attachment: scroll; /* Фиксируем фон для мобильных */
     }
+
+    .discount-text {
+    text-decoration: none !important;
+}
 
 }
 
