@@ -1636,7 +1636,9 @@ html {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
 }
+
 
 /* Контейнер для галереи (50% ширины) */
 .catalog-gallery-wrapper {
@@ -1659,15 +1661,17 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    transition: transform 0.5s ease;
+    overflow: hidden;
 }
 
 .gallery-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
+    min-height: 100%;
     object-fit: cover;
-    flex-shrink: 0;
     display: none;
 }
 
@@ -1758,4 +1762,4 @@ html {
     .catalog-gallery {
         padding-top: 75%; /* Менее квадратный формат на мобильных */
     }
-}
+} 

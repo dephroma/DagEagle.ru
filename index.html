@@ -634,75 +634,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Обрабатываем ВСЕ галереи на странице
-    document.querySelectorAll('.catalog-gallery').forEach(gallery => {
-        const container = gallery.querySelector('.gallery-container');
-        const images = gallery.querySelectorAll('.gallery-container img');
-        const prevBtn = gallery.querySelector('.gallery-prev');
-        const nextBtn = gallery.querySelector('.gallery-next');
-        const indicators = gallery.querySelectorAll('.indicator');
-        
-        let currentIndex = 0;
-        const totalImages = images.length;
-        let isAnimating = false;
-        const animationDuration = 500;
+document.querySelectorAll('.catalog-gallery').forEach(gallery => {
+    const images = gallery.querySelectorAll('img');
+    const dots = gallery.querySelectorAll('.indicator');
+    let currentIndex = 0;
 
-        // Инициализация
-        function initGallery() {
-            images.forEach((img, index) => {
-                img.style.opacity = index === 0 ? '1' : '0';
-            });
-            updateIndicators();
-        }
-
-        function updateIndicators() {
-            indicators.forEach((ind, index) => {
-                ind.classList.toggle('active', index === currentIndex);
-            });
-        }
-
-        function showImage(index) {
-            if (isAnimating || currentIndex === index) return;
-            isAnimating = true;
-            
-            images[currentIndex].style.opacity = '0';
-            
-            setTimeout(() => {
-                currentIndex = index;
-                images[currentIndex].style.opacity = '1';
-                updateIndicators();
-                isAnimating = false;
-            }, animationDuration);
-        }
-        
-        function nextImage() {
-            const newIndex = (currentIndex + 1) % totalImages;
-            showImage(newIndex);
-        }
-        
-        function prevImage() {
-            const newIndex = (currentIndex - 1 + totalImages) % totalImages;
-            showImage(newIndex);
-        }
-        
-        // Навигация
-        prevBtn.addEventListener('click', prevImage);
-        nextBtn.addEventListener('click', nextImage);
-        
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => showImage(index));
+    function showSlide(index) {
+        images.forEach((img, i) => {
+            img.classList.toggle('active', i === index);
         });
-
-        // Автопрокрутка
-        let autoplay = setInterval(nextImage, 3000);
-        
-        gallery.addEventListener('mouseenter', () => clearInterval(autoplay));
-        gallery.addEventListener('mouseleave', () => {
-            autoplay = setInterval(nextImage, 3000);
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
         });
+    }
 
-        initGallery();
+    gallery.querySelector('.gallery-next').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showSlide(currentIndex);
+    });
+
+    gallery.querySelector('.gallery-prev').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showSlide(currentIndex);
+    });
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            showSlide(currentIndex);
+        });
     });
 });
 </script>
