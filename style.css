@@ -163,82 +163,190 @@ body {
 /* Кнопки */
 
 
-.cta-button{
-    font-family: 'Montserrat', serif;
-      margin-top: 300px; /* Добавляем отступ сверху */
-    margin-bottom: 20px;
-  position: relative;
-  background: transparent;
-  color: transparent;
-  border: none;
-  padding: 12px 25px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  border-radius: 4px;
-  letter-spacing: 1px;
-    margin-bottom: 20px; /* Добавляем отступ */
-    overflow: hidden;
-    transition: all 0.4s ease;
-    z-index: 1;
+.cta-button {
+    /* Шрифт и текст */
+    font-family: 'Montserrat', serif; /* Используем шрифт Montserrat с запасным serif */
+    font-size: 1rem; /* Размер шрифта ~16px */
+    font-weight: 600; /* Полужирное начертание */
+    text-transform: uppercase; /* Все буквы заглавные */
+    letter-spacing: 1px; /* Разрядка между буквами */
 
+    isolation: isolate; /* Создаем новый контекст наложения */
     
+    /* Цвет и фон */
+    background: transparent; /* Прозрачный фон (переопределяется градиентом текста) */
+    color: transparent; /* Прозрачный цвет текста (для градиента) */
     
-    /* Градиент текста как в навигации */
+    /* Градиент для текста */
     background: linear-gradient(135deg, #F5DEB3 0%, #FFD700 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; /* Для Safari */
+    background-clip: text; /* Обрезаем градиент по форме текста */
+    -webkit-text-fill-color: transparent; /* Делаем текст прозрачным для градиента */
+    
+    /* Рамка и форма */
+    border: none; /* Убираем стандартную рамку */
+    border-radius: 4px; /* Скругляем углы */
+    
+    /* Размеры и отступы */
+    padding: 12px 25px; /* Внутренние отступы */
+    margin-top: 300px; /* Большой отступ сверху */
+    margin-bottom: 20px; /* Отступ снизу */
+    
+    /* Позиционирование и слои */
+    position: relative; /* Для позиционирования псевдоэлементов */
+    z-index: 1; /* Поднимаем над псевдоэлементами */
+    overflow: hidden; /* Скрываем выходящие за границы элементы */
+    
+    /* Анимация */
+    transition: all 0.4s ease; /* Плавные переходы для всех свойств */
 }
 
-/* Стекло-подложка */
+/* Стекло-подложка (псевдоэлемент) */
 .cta-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6); /* Полупрозрачный черный */
-    backdrop-filter: blur(8px); /* Эффект размытия */
-    -webkit-backdrop-filter: blur(8px);
-    border-radius: 10px;
-    z-index: -1;
+    content: ''; /* Обязательное свойство для псевдоэлементов */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 0; left: 0; right: 0; bottom: 0; /* Растягиваем на всю кнопку */
+    
+    /* Стиль стеклянного эффекта */
+    background: rgba(0, 0, 0, 0.6); /* Полупрозрачный черный фон */
+    backdrop-filter: blur(8px); /* Размытие фона */
+    -webkit-backdrop-filter: blur(8px); /* Для Safari */
     border: 1px solid rgba(255, 255, 255, 0.1); /* Тонкая светлая рамка */
-    transition: all 0.4s ease;
+    border-radius: 10px; /* Скругление (чуть больше чем у кнопки) */
+    
+    /* Слои и анимация */
+    z-index: -1; /* Под текстом, но над градиентной рамкой */
+    transition: all 0.4s ease; /* Плавные переходы */
 }
 
-/* Градиентная рамка */
+/* Градиентная рамка (псевдоэлемент) */
 .cta-button::after {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
+    content: ''; /* Обязательное свойство */
+    position: absolute; /* Абсолютное позиционирование */
+    top: -2px; left: -2px; right: -2px; bottom: -2px; /* Чуть больше кнопки */
+    
+    /* Градиентная рамка */
     background: linear-gradient(135deg, #F5DEB3 0%, #FFD700 100%);
-    border-radius: 12px;
-    z-index: -2;
-    opacity: 0.7;
-    transition: all 0.4s ease;
+    border-radius: 12px; /* Скругление */
+    opacity: 0.7; /* Полупрозрачность */
+    
+    /* Слои и анимация */
+    z-index: -2; /* Самый нижний слой */
+    transition: all 0.4s ease; /* Плавные переходы */
+
+        animation: cloudLight 6s ease-in-out infinite;
+    box-shadow: 0 0 30px 15px rgba(255, 215, 0, 0.3);
+        animation: 
+        borderGlow 7s ease-in-out infinite alternate,
+        cloudLight 6s ease-in-out infinite;
+    
+    /* Фиксируем базовые параметры свечения */
+    box-shadow: 
+        0 0 15px 5px rgba(255, 215, 0, 0.3),
+        0 0 30px 10px rgba(255, 165, 0, 0.2);
+    opacity: 0.8;
 }
 
 /* Эффекты при наведении */
 .cta-button:hover {
+    /* Измененный градиент текста */
     background: linear-gradient(135deg, #F5DEB3 0%, #E67E22 50%, #FFA500 100%);
     -webkit-background-clip: text;
     background-clip: text;
-    transform: translateY(-3px);
-    text-shadow: 0 0 10px rgba(230, 126, 34, 0.3);
-}
-.cta-button:hover::after {
-    background: linear-gradient(135deg, #F5DEB3 0%, #E67E22 50%, #FFA500 100%);
-    opacity: 0.9;
+    
+    transform: translateY(-3px); /* Поднимаем кнопку */
+    text-shadow: 0 0 10px rgba(230, 126, 34, 0.3); /* Тень текста */
 }
 
-.cta-button:hover::before {
-    background: rgba(0, 0, 0, 0.7); /* Чуть темнее при наведении */
+/* Изменение градиентной рамки при наведении */
+.cta-button:hover::after {
+    background: linear-gradient(135deg, #F5DEB3 0%, #E67E22 50%, #FFA500 100%);
+    opacity: 0.9; /* Меньше прозрачности */
 }
+
+/* Изменение стеклянного фона при наведении */
+.cta-button:hover::before {
+    background: rgba(0, 0, 0, 0.7); /* Темнее фон */
+}
+
+/* Ключевые кадры анимации */
+@keyframes cloudLight {
+    0%, 100% {
+        opacity: 0.5;
+        box-shadow: 
+            0 0 20px 5px rgba(255, 215, 0, 0.2),
+            0 0 40px 10px rgba(255, 166, 0, 0.1);
+        background: linear-gradient(135deg, 
+            rgba(245, 222, 179, 0.3) 0%, 
+            rgba(255, 215, 0, 0.3) 100%);
+    }
+    25% {
+        box-shadow: 
+            0 0 30px 8px rgba(255, 215, 0, 0.3),
+            0 0 50px 15px rgba(255, 140, 0, 0.15);
+    }
+    50% {
+        opacity: 0.8;
+        box-shadow: 
+            0 0 40px 12px rgba(255, 215, 0, 0.4),
+            0 0 60px 20px rgba(255, 100, 0, 0.2);
+        background: linear-gradient(135deg, 
+            rgba(245, 222, 179, 0.5) 0%, 
+            rgba(255, 165, 0, 0.5) 100%);
+    }
+    75% {
+        box-shadow: 
+            0 0 25px 7px rgba(255, 215, 0, 0.25),
+            0 0 45px 12px rgba(255, 180, 0, 0.1);
+    }
+}
+
+@keyframes borderGlow {
+    0% {
+        background: linear-gradient(135deg, 
+            rgba(245, 222, 179, 0.7) 0%, 
+            rgba(255, 215, 0, 0.7) 100%);
+    }
+    100% {
+        background: linear-gradient(135deg, 
+            rgba(255, 165, 0, 0.9) 0%, 
+            rgba(218, 138, 21, 0.9) 100%);
+    }
+}
+
+@keyframes cloudLight {
+    0%, 100% {
+        box-shadow: 
+            0 0 15px 5px rgba(255, 215, 0, 0.3),
+            0 0 30px 10px rgba(255, 165, 0, 0.2);
+    }
+    50% {
+        box-shadow: 
+            0 0 25px 8px rgba(255, 215, 0, 0.5),
+            0 0 40px 15px rgba(255, 140, 0, 0.3);
+    }
+}
+
+/* Усиливаем свечение при наведении */
+.cta-button:hover::after {
+    animation: 
+        borderGlow 3s ease-in-out infinite alternate,
+        cloudLight 2s ease-in-out infinite;
+    opacity: 1;
+    box-shadow: 
+        0 0 25px 10px rgba(255, 215, 0, 0.6),
+        0 0 40px 20px rgba(255, 165, 0, 0.4);
+}
+
+/* Оптимизация производительности */
+.cta-button::before,
+.cta-button::after {
+    will-change: opacity, box-shadow, background;
+}
+
+
+
+
 
 /* Анимация появления */
 @keyframes fadeInUp {
