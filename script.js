@@ -108,24 +108,6 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   // ========== Параллакс ==========
-  const initParallax = () => {
-    const parallax = document.querySelector('.parallax-image');
-    const parallaxSection = document.querySelector('.parallax-booking');
-    
-    if (!parallax || !parallaxSection) return;
-    
-    function updateParallax() {
-      const rect = parallaxSection.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        parallax.style.transform = `translate3d(0, ${window.pageYOffset * 0.3}px, 0)`;
-      }
-    }
-    
-    if (window.innerWidth <= 768) {
-      window.addEventListener('scroll', updateParallax);
-      updateParallax();
-    }
-  };
 
   // ========== Формы ==========
   const initForms = () => {
@@ -198,5 +180,8 @@ document.addEventListener('DOMContentLoaded', function() {
   initParallax();
   initForms();
 
+
+  
   
 });
+
