@@ -174,7 +174,7 @@ body {
     isolation: isolate; /* Создаем новый контекст наложения */
     
     /* Цвет и фон */
-    background: transparent; /* Прозрачный фон (переопределяется градиентом текста) */
+    background: linear-gradient(135deg, #FFD700 0%, #ff5e00 100%);
     color: transparent; /* Прозрачный цвет текста (для градиента) */
     
     /* Градиент для текста */
@@ -301,18 +301,7 @@ body {
     }
 }
 
-@keyframes borderGlow {
-    0% {
-        background: linear-gradient(135deg, 
-            rgba(245, 222, 179, 0.7) 0%, 
-            rgba(255, 215, 0, 0.7) 100%);
-    }
-    100% {
-        background: linear-gradient(135deg, 
-            rgba(255, 165, 0, 0.9) 0%, 
-            rgba(218, 138, 21, 0.9) 100%);
-    }
-}
+
 
 @keyframes cloudLight {
     0%, 100% {
