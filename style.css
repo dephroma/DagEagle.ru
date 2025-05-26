@@ -88,6 +88,8 @@ body {
 }
 
 
+
+/* ПУТЕШЕСТВИЯ В ДАГЕСТАН 1080p */
 .hero h1 {
   font-family: 'Equilibrist', serif;
   font-size: 3rem;
@@ -96,37 +98,21 @@ body {
   letter-spacing: 1px;
   line-height: 1.2;
   
-  
-  /* Градиент от песочного (#F5DEB3) к золотому (#FFD700) */
-  background: linear-gradient(135deg, #ffc82f 0%, #f8c452f1 100%);
+  /* Градиент только для текста (без свечения) */
+  background: linear-gradient(135deg, #fff4e0, #ffe341);
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
   color: transparent;
+  display: inline-block;
   
-  /* Эффект свечения */
+  /* Свечение ТОЛЬКО вокруг букв */
   text-shadow: 
-    0 0 10px rgba(245, 222, 179, 0.7), /* Песочное свечение */
-    0 0 20px rgba(255, 217, 0, 0.863); /* Золотое свечение */
-  
-  /* Анимация мерцания */
-  animation: glow 2s ease-in-out infinite alternate;
+    0 0 5px rgba(255, 215, 0, 0.7),
+    0 0 10px rgba(255, 215, 0, 0.4);
+
+
 }
 
-/* Анимация свечения */
-@keyframes glow {
-  from {
-    text-shadow: 
-      0 0 10px rgba(245, 222, 179, 0.7),
-      0 0 20px rgba(255, 217, 0, 0.5);
-  }
-  to {
-    text-shadow: 
-      0 0 15px rgba(245, 222, 179, 0.9),
-      0 0 30px rgba(255, 217, 0, 0.8),
-      0 0 40px rgba(255, 217, 0, 0.6);
-  }
-} 
 
 /* Адаптация для планшета */
 
@@ -140,24 +126,8 @@ body {
     text-shadow: 
       0 0 4px rgba(245, 222, 179, 0.6),  /* Уменьшенное свечение */
       0 0 7px rgba(255, 215, 0, 0.4);     /* Более тонкое золотое свечение */
-    
-    /* Упрощенная анимация для мобильных */
-    animation: mobile-glow 2s ease-in-out infinite alternate;
   }
   
-  /* Упрощенная анимация свечения для мобильных */
-  @keyframes mobile-glow {
-    from {
-      text-shadow: 
-        0 0 10px rgba(245, 222, 179, 0.6),
-        0 0 16px rgba(255, 215, 0, 0.4);
-    }
-    to {
-      text-shadow: 
-        0 0 16px rgba(245, 222, 179, 0.7),
-        0 0 19px rgba(255, 215, 0, 0.5);
-    }
-  }
   
   .hero .subtitle {
     font-size: 1.2rem;
@@ -182,24 +152,14 @@ body {
       0 0 2px rgba(245, 222, 179, 0.6),  /* Уменьшенное свечение */
       0 0 3px rgba(255, 215, 0, 0.4);     /* Более тонкое золотое свечение */
     
-    /* Упрощенная анимация для мобильных */
-  }
-  
-  /* Упрощенная анимация свечения для мобильных */
-  @keyframes mobile-glow {
-    from {
-      text-shadow: 
-        0 0 10px rgba(245, 222, 179, 0.6),
-        0 0 12px rgba(255, 215, 0, 0.4);
-    }
-    to {
-      text-shadow: 
-        0 0 14px rgba(245, 222, 179, 0.7),
-        0 0 15px rgba(255, 215, 0, 0.5);
-    }
-  }
+  }  
   
 }
+
+
+
+
+
 /* Кнопки */
 
 
@@ -503,11 +463,11 @@ body {
     font-size: 1.1rem;
 }
 
-.duration {
+/* .duration {
     font-size: 1.2rem;
     font-weight: 600;
     color: #333;
-}
+} */
 
 
 
@@ -789,6 +749,14 @@ body {
     margin: 15px 0;
     font-weight: bold;
     color: #71c6ff;
+        font-size: 20px;
+}
+
+.duration2 {
+    margin: 15px 0;
+    font-weight: bold;
+    color: #ffffff;
+        font-size: 20px;
 }
 
 
@@ -845,39 +813,6 @@ body {
         padding-top: 100px; /* Увеличиваем отступ для мобильных */
     }
 }
-
-
-/* Стили для галереи */
-
-@media (max-width: 480px) {
-    .hero h1 {
-        font-family: 'Equilibrist', serif;
-        font-size: 1.6rem;
-        line-height: 1.3;
-        margin-top: 10px;
-                    text-shadow: 
-      0 0 1px rgba(245, 222, 179, 0.2),  /* Уменьшенное свечение */
-      0 0 2px rgba(255, 215, 0, 0.2);     /* Более тонкое золотое свечение */
-    }
-    
-    .hero .subtitle {
-
-        font-size: 0.9rem;
-    }
-    
-    .hero .description p {
-        font-size: 0.9rem;
-    }
-    
-    .cta-button {
-        margin-top: 30px; /* Добавляем отступ сверху */
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-
-    
-}
-
 
 
 
