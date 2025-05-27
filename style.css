@@ -74,11 +74,12 @@ body {
 
 
 
+
 /* Герой-секция */
 .hero {
   text-align: center;
-  font-family: "Farabee";
-  background: url('images/background.jpg') center/cover;
+  font-family: "Farabee", sans-serif;
+  background: url('images/background.jpg') center/cover no-repeat;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -86,7 +87,11 @@ body {
   justify-content: center;
   color: white;
   font-size: 1.2rem;
+  position: relative;
+
+  
 }
+
 
 
 
@@ -131,6 +136,7 @@ body {
   .hero .subtitle {
     font-size: 1.2rem;
     margin-bottom: 30px;
+    
   }
   
   .hero .description p {
