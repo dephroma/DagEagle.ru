@@ -63,7 +63,7 @@ body {
 }
 
 @font-face {
-  font-family: 'Farabee';  /* Название, которое будете использовать */
+  font-family: 'Farabee-S';  /* Название, которое будете использовать */
   src: 
     url('../fonts/Farabee-S.ttf') format('truetype');
   font-weight: normal; 
