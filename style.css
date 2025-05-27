@@ -708,7 +708,7 @@ body {
 
 /* Основные стили навигации */
 .nav-link {
-    font-family: 'Farabee';
+    font-family: 'Farabee-S';
     font-size: 23px; /* Увеличили размер шрифта */
     font-weight: 500; /* Средняя насыщенность */
     text-decoration: none !important;
