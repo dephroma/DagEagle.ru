@@ -78,7 +78,7 @@ body {
 .hero {
       text-align: center; /* Центрируем кнопку */
     font-family: "Farabee";
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.76)), url('images/background.jpg');
+    background: url('images/background.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -697,7 +697,7 @@ body {
 
 /* Основные стили навигации */
 .nav-link {
-    font-family: 'Equilibrist', sans-serif;
+    font-family: 'Farabee';
     font-size: 23px; /* Увеличили размер шрифта */
     font-weight: 500; /* Средняя насыщенность */
     text-decoration: none !important;
