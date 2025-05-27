@@ -1325,6 +1325,7 @@ body {
   font-size: 18px;
   color: #d1d1d1;
   margin-bottom: 40px;
+    line-height: 0.2; /* Уменьшил межстрочный интервал */
 }
 
 .social-link {
