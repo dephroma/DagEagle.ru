@@ -1506,79 +1506,133 @@ body {
 
 
 /* Общие стили для всех полей формы */
-.form-group input,       /* Стили для текстовых полей ввода */
-.form-group select,      /* Стили для выпадающих списков */
-.form-group textarea {   /* Стили для многострочных текстовых полей */
-  
-  /* Размеры и расположение */
-  width: 50%;           /* Занимает 100% ширины родительского контейнера */
-  padding: 10px;         /* Внутренние отступы по 10px со всех сторон */
-  margin: 5px 0;         /* Внешние отступы: 5px сверху и снизу, 0 по бокам */
-  box-sizing: border-box; /* Учитывает padding и border в общей ширине элемента */
-
-  /* Внешний вид */
-  border: 1px solid #ddd; /* Серая граница толщиной 1px */
-  border-radius: 7px;     /* Закругление углов на 5px */
-  background-color: white; /* Белый фон поля ввода */
-
-  /* Текст */
-  font-size: 16px;        /* Размер шрифта */
-  font-family: 'Montserrat', sans-serif; /* Шрифт Montserrat с запасным sans-serif */
-}
-
-/* Специальные стили для поля даты */
-.form-group input[type="date"] {
-  -webkit-appearance: none; /* Убираем стандартный стиль в Safari */
-  appearance: none;
-  height: 50px; /* Такая же высота как у других полей */
-  background: white url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3e%3c/rect%3e%3cline x1='16' y1='2' x2='16' y2='6'%3e%3c/line%3e%3cline x1='8' y1='2' x2='8' y2='6'%3e%3c/line%3e%3cline x1='3' y1='10' x2='21' y2='10'%3e%3c/line%3e%3c/svg%3e") no-repeat;
-  background-position: right 15px center;
-  background-size: 20px;
-  padding-right: 45px;
-}
-
-/* Специальные стили для select */
-.form-group select {
-  appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: right 15px center;
-  background-size: 15px;
-  padding-right: 40px;
-  height: 50px;
-}
-
-/* Стили для textarea (комментарий) */
+/* Основные стили для всех полей формы */
+.form-group input,
+.form-group select,
 .form-group textarea {
-  min-height: 50px; /* Начальная высота как у других полей */
-  resize: vertical; /* Разрешаем изменять высоту только вертикально */
-  line-height: 1.5;
+  /* Размеры и отступы */
+  width: 70%;
+  padding: 12px 15px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  
+  /* Внешний вид */
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+  
+  /* Текст */
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
 }
 
-/* Стили для поля даты */
-.form-group input[type="date"] {
-  height: 50px;
-}
-
-/* Стили для фокуса */
+/* Стили при фокусе */
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
   border-color: #4a76a8;
-  box-shadow: 0 0 0 2px rgba(74, 118, 168, 0.2);
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(74, 118, 168, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Специальные стили для поля даты */
+.form-group input[type="date"] {
+  height: 50px;
+  background: #f9f9f9 url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a76a8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3e%3c/rect%3e%3cline x1='16' y1='2' x2='16' y2='6'%3e%3c/line%3e%3cline x1='8' y1='2' x2='8' y2='6'%3e%3c/line%3e%3cline x1='3' y1='10' x2='21' y2='10'%3e%3c/line%3e%3c/svg%3e") no-repeat;
+  background-position: right 15px center;
+  background-size: 20px;
+  padding-right: 45px;
+}
+
+/* Стили для выпадающего списка */
+.form-group select {
+  background: #f9f9f9 url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a76a8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") no-repeat;
+  background-position: right 15px center;
+  background-size: 15px;
+  padding-right: 40px;
+  height: 50px;
+  cursor: pointer;
+}
+
+/* Стили для textarea */
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+  line-height: 1.6;
+  transition: height 0.2s ease;
 }
 
 /* Стили для options */
 .form-group select option {
-  padding: 10px;
-  font-size: 16px;
+  padding: 12px;
+  font-size: 15px;
+  background: #fff;
 }
 
 /* Стиль при наведении */
-.form-group select:hover {
-  border-color: #aaa;
+.form-group select:hover,
+.form-group input:hover,
+.form-group textarea:hover {
+  border-color: #b0b0b0;
+  background-color: #f5f5f5;
 }
+
+/* Анимация при фокусе */
+@keyframes input-focus {
+  0% { box-shadow: 0 0 0 0 rgba(74, 118, 168, 0.3); }
+  100% { box-shadow: 0 0 0 5px rgba(74, 118, 168, 0); }
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  animation: input-focus 0.5s ease;
+}
+
+/* Стили для label (если они есть в вашей форме) */
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #555;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Плейсхолдеры */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #aaa;
+  font-style: italic;
+  opacity: 1; /* Для Firefox */
+}
+
+/* Кастомный скроллбар для textarea */
+.form-group textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.form-group textarea::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.form-group textarea::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.form-group textarea::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+
+
 
 .submit-btn {
   background: #0077ff;
