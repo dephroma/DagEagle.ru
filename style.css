@@ -62,6 +62,15 @@ body {
   font-display: swap;  /* Чтобы текст не "прыгал" при загрузке */
 }
 
+@font-face {
+  font-family: 'Farabee';  /* Название, которое будете использовать */
+  src: 
+    url('../fonts/Farabee-S.ttf') format('truetype');
+  font-weight: normal; 
+  font-style: normal;
+  font-display: swap;  /* Чтобы текст не "прыгал" при загрузке */
+}
+
 .container {
     width: 100%;
     max-width: 1200px;
@@ -699,7 +708,7 @@ body {
 
 /* Основные стили навигации */
 .nav-link {
-    font-family: 'Farabee';
+    font-family: 'Farabee-S';
     font-size: 23px; /* Увеличили размер шрифта */
     font-weight: 500; /* Средняя насыщенность */
     text-decoration: none !important;
