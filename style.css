@@ -76,18 +76,16 @@ body {
 
 /* Герой-секция */
 .hero {
-      text-align: center; /* Центрируем кнопку */
-    font-family: "Farabee";
-    background: url('images/background.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Центрирование по горизонтали */
-    color: rgb(255, 255, 255);
-    text-align: center;
-      font-size: 1.2rem;
+  text-align: center;
+  font-family: "Farabee";
+  background: url('images/background.jpg') center/cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
 }
 
 
@@ -101,19 +99,17 @@ body {
   letter-spacing: 1px;
   line-height: 1.2;
   
-  /* Градиент только для текста (без свечения) */
-  background: linear-gradient(135deg, #fff4e0, #ffe341);
+  /* Градиентный текст */
+  background: linear-gradient(135deg, #ffb834, #ffe341);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  display: inline-block;
   
-  /* Свечение ТОЛЬКО вокруг букв */
+  /* Свечение вокруг букв */
   text-shadow: 
-    0 0 5px rgba(255, 215, 0, 0.7),
-    0 0 10px rgba(255, 215, 0, 0.4);
-
-
+    0 0 2px rgba(255, 215, 0, 0.7),
+    0 0 4px rgba(255, 215, 0, 0.4);
+  
 }
 
 
