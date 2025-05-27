@@ -408,104 +408,114 @@ body {
 
 
 /* КНОПКА БРОНИРОВАТЬ */
+/* Основные стили кнопки */
 .book-btn {
-    /* Основные стили */
-    display: inline-block;
-    width: auto;
-    padding: 15px 50px;
-    font-family: 'Montserrat', sans-serif;
-    position: relative;
-    background: linear-gradient(135deg, #ffde24 0%, #F5DEB3 100%);
-    color: #ffffff;
-    border: none;
-    font-size: 1.2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    border-radius: 18px;
-    letter-spacing: 0.5px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    z-index: 1;
-    
-    /* Свечение по умолчанию */
+    position: relative; /* Для позиционирования псевдоэлементов */
+    display: inline-block; /* Чтобы кнопка занимала только нужное пространство */
+    padding: 15px 30px; /* Внутренние отступы (вертикальные, горизонтальные) */
+    color: #fff; /* Цвет текста - белый */
+    font-size: 18px; /* Размер шрифта */
+    font-weight: bold; /* Жирное начертание */
+    text-transform: uppercase; /* Все буквы заглавные */
+    letter-spacing: 2px; /* Расстояние между буквами */
+    background: linear-gradient(45deg, #ffd700, #ffaa00); /* Золотистый градиентный фон */
+    border: none; /* Убираем стандартную рамку */
+    border-radius: 18px; /* Закругленные углы */
+    cursor: pointer; /* Курсор в виде указателя */
+    overflow: hidden; /* Скрываем выходящие за границы элементы */
+    z-index: 1; /* Определяем порядок наложения */
+    transition: all 0.3s ease; /* Плавные переходы для всех свойств */
     box-shadow: 
-        0 0 15px rgba(255, 215, 0, 0.8),
-        0 0 30px rgba(255, 215, 0, 0.5);
-    text-shadow: 
-        0 0 1px rgba(0, 0, 0, 0.267),
-        0 0 2px rgba(0, 0, 0, 0.233);
-    white-space: nowrap;
-    margin: 0 auto;
-    
-    /* Анимация пульсации всегда активна */
-    animation: pulse 1.5s infinite alternate;
+        0 5px 15px rgba(255, 215, 0, 0.4), /* Внешняя тень */
+        0 0 30px rgba(255, 215, 0, 0.1); /* Свечение */
+    animation: pulse 2s infinite alternate; /* Анимация пульсации */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Тень под текстом */
 }
 
-/* Стеклянная подложка */
+/* Стеклянный эффект (подложка под кнопкой) */
 .book-btn::before {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    right: 3px;
-    bottom: 3px;
-    border-radius: 15px;
-    background: rgba(43, 43, 43, 0.247); /* Темнее по умолчанию */
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    z-index: -1;
-    pointer-events: none;
-    transition: all 0.3s ease;
+    content: ''; /* Обязательное свойство для псевдоэлементов */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 3px; /* Отступ сверху */
+    left: 3px; /* Отступ слева */
+    right: 3px; /* Отступ справа */
+    bottom: 3px; /* Отступ снизу */
+    border-radius: 15px; /* Закругление чуть меньше, чем у кнопки */
+    background: rgba(0, 0, 0, 0.3); /* Полупрозрачный черный фон */
+    backdrop-filter: blur(4px); /* Размытие фона (стеклянный эффект) */
+    -webkit-backdrop-filter: blur(4px); /* Для поддержки в Safari */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Полупрозрачная белая рамка */
+    z-index: -1; /* Размещаем под основным содержимым */
+    pointer-events: none; /* Игнорирование кликов */
+    transition: all 0.3s ease; /* Плавные переходы */
 }
 
-/* Состояние при наведении - затемнение */
+/* Эффект блеска (анимированный блик) */
+.book-btn::after {
+    content: ''; /* Обязательное свойство */
+    position: absolute; /* Абсолютное позиционирование */
+    top: -50%; /* Начальное положение - выше кнопки */
+    left: -50%; /* Начальное положение - левее кнопки */
+    width: 200%; /* Ширина в 2 раза больше кнопки */
+    height: 200%; /* Высота в 2 раза больше кнопки */
+    background: linear-gradient(
+        to bottom right, /* Направление градиента */
+        rgba(255, 255, 255, 0) 45%, /* Прозрачный цвет */
+        rgba(255, 255, 255, 0.3) 50%, /* Полупрозрачный белый */
+        rgba(255, 255, 255, 0) 55% /* Снова прозрачный */
+    );
+    transform: rotate(30deg); /* Наклон градиента */
+    transition: all 0.5s ease; /* Плавная анимация */
+    opacity: 0; /* Изначально невидим */
+}
+
+/* Стили при наведении курсора */
 .book-btn:hover {
-    transform: translateY(-3px);
-    
-    /* Уменьшаем свечение */
+    transform: translateY(-3px); /* Эффект "поднятия" кнопки */
     box-shadow: 
-        0 0 8px rgba(255, 215, 0, 0.6),
-        0 0 15px rgba(255, 215, 0, 0.3);
-    
-    /* Отключаем пульсацию при наведении */
-    animation: none;
+        0 8px 20px rgba(255, 215, 0, 0.6), /* Усиленная тень */
+        0 0 40px rgba(255, 215, 0, 0.3); /* Усиленное свечение */
+    animation: none; /* Отключаем пульсацию при наведении */
 }
 
-/* Затемняем подложку еще сильнее при наведении */
+/* Изменение подложки при наведении */
 .book-btn:hover::before {
-    background: rgba(54, 54, 54, 0.418);
-    border-color: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.4); /* Затемнение фона */
+    border-color: rgba(255, 255, 255, 0.3); /* Более видимая рамка */
 }
 
+/* Активация эффекта блеска при наведении */
+.book-btn:hover::after {
+    opacity: 1; /* Делаем видимым */
+    top: -30%; /* Новое положение */
+    left: -30%; /* Новое положение */
+}
 
-/* Состояние при нажатии - яркое свечение */
+/* Стили при нажатии на кнопку */
 .book-btn:active {
-    transform: translateY(1px);
-    
-    /* Усиливаем свечение */
+    transform: translateY(1px); /* Эффект "нажатия" */
     box-shadow: 
-        0 0 20px rgba(255, 215, 0, 1),
-        0 0 40px rgba(255, 215, 0, 0.7);
-    
-    /* Делаем подложку светлее */
-    &::before {
-        background: rgba(0, 0, 0, 0.2);
-        border-color: rgba(255, 255, 255, 0.2);
-    }
+        0 0 30px rgba(255, 215, 0, 1), /* Интенсивное свечение */
+        0 0 60px rgba(255, 215, 0, 0.7); /* Расширенное свечение */
 }
 
-/* Анимация пульсации */
+/* Изменение подложки при нажатии */
+.book-btn:active::before {
+    background: rgba(0, 0, 0, 0.2); /* Осветление фона */
+    border-color: rgba(255, 255, 255, 0.4); /* Более яркая рамка */
+}
+
+/* Анимация пульсирующего свечения */
 @keyframes pulse {
     0% {
         box-shadow: 
-            0 0 15px rgba(252, 219, 32, 0.8),
-            0 0 30px rgba(255, 215, 0, 0.5);
+            0 0 15px rgba(255, 215, 0, 0.8), /* Начальное состояние тени */
+            0 0 30px rgba(255, 215, 0, 0.5); /* Начальное состояние свечения */
     }
     100% {
         box-shadow: 
-            0 0 20px rgba(255, 215, 0, 1),
-            0 0 40px rgba(255, 215, 0, 0.7);
+            0 0 25px rgba(255, 215, 0, 1), /* Конечное состояние тени */
+            0 0 50px rgba(255, 215, 0, 0.7); /* Конечное состояние свечения */
     }
 }
 
