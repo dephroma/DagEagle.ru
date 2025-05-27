@@ -88,7 +88,12 @@ body {
 .hero {
   text-align: center;
   font-family: "Farabee", sans-serif;
-  background: url('images/background.jpg') center/cover no-repeat;
+  background: 
+    linear-gradient(to bottom, 
+      rgba(0, 0, 0, 0.7) 0%, 
+      rgba(0, 0, 0, 0.3) 50%, 
+      rgba(0, 0, 0, 0.1) 100%),
+    url('images/background.jpg') center/cover no-repeat;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -97,8 +102,6 @@ body {
   color: white;
   font-size: 1.2rem;
   position: relative;
-
-  
 }
 
 
@@ -644,15 +647,32 @@ body {
 
 /* Навигация (ещё раз для надёжности) */
 .navbar {
-    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный */
-    backdrop-filter: blur(5px); /* Эффект размытия для красивого стеклянного вида */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    box-shadow: 
+        0 2px 10px rgba(0, 0, 0, 0.3),
+        0 4px 6px rgba(0, 0, 0, 0.1), /* Основная тень */
+        0 1px 0 rgba(255, 255, 255, 0.1) inset, /* Внутреннее свечение сверху */
+        0 -1px 0 rgba(255, 255, 255, 0.05) inset, /* Внутреннее свечение снизу */
+        0 2px 0 rgba(255, 255, 255, 0.03); /* Тонкая светлая окантовка снизу */
     padding: 2px 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Полупрозрачная граница */
+}
+
+/* Эффект при прокрутке или наведении */
+.navbar:hover {
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.4),
+        0 6px 10px rgba(0, 0, 0, 0.15),
+        0 1px 0 rgba(255, 255, 255, 0.15) inset,
+        0 -1px 0 rgba(255, 255, 255, 0.08) inset,
+        0 3px 0 rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .nav-container {
@@ -662,7 +682,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 10px;
-        position: relative;
+    position: relative;
     z-index: 100;
 }
 
@@ -803,7 +823,11 @@ body {
     text-align: center;
     margin-bottom: 60px;
     font-size: 36px;
-    color: #f0f0f0;
+    background: linear-gradient(to right, #ffffff, #f5deb3, #ffd342);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .catalog-item {
