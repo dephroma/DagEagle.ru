@@ -1976,3 +1976,11 @@ html {
     font-size: 1.8rem;
   }
 }
+
+.cta-button {
+  border: 1px solid red !important;
+}
+
+.cta-button {
+  white-space: nowrap; /* Запрещаем перенос текста */
+}
