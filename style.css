@@ -1977,35 +1977,3 @@ html {
   }
 }
 
-@media (min-width: 337px) and (max-width: 351px) {
-  .cta-button {
-    /* 1. Сбрасываем потенциально проблемные свойства */
-    position: relative;
-    overflow: visible;
-    
-    /* 2. Жёстко контролируем псевдоэлементы */
-    &::before,
-    &::after {
-      content: none !important; /* Полностью отключаем */
-    }
-    
-    /* 3. Корректируем геометрию */
-    min-width: 260px; /* Фиксированная минимальная ширина */
-    padding: 8px 12px;
-    margin-left: 0;
-    transform: none !important;
-    
-    /* 4. Упрощаем фон */
-    background: linear-gradient(135deg, #FFD700, #ff5e00) !important;
-    -webkit-background-clip: initial !important;
-    background-clip: initial !important;
-    color: white !important; /* Сплошной цвет вместо градиента */
-  }
-  
-  /* 5. Проверка родительского контейнера */
-  .hero .container {
-    padding-left: 10px;
-    padding-right: 10px;
-    overflow: hidden; /* Скрываем любые вылезающие элементы */
-  }
-}
